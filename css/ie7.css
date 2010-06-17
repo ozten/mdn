@@ -1,0 +1,17 @@
+.wrap { zoom: 1; }
+
+#nav-main li, #nav-extra li { display: inline; }
+
+#nav, .major #nav { zoom: 1; }
+
+#site-search button { padding: 3px 3px; }
+
+#sections { padding: 0 1.5%; margin: 0 -1.5%; }
+
+.type { zoom: 1; }
+
+.module .gallery li { display: inline; }
+
+#content-sub .heat-graph a b { margin-top: -1.25em; }
+
+.entry-meta cite { font-style: normal; }
