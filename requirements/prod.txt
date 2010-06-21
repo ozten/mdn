@@ -9,3 +9,6 @@ Django==1.2.1
 
 # Caching.
 python-memcached==1.45
+
+# Data.
+-e git://github.com/fwenzel/django-mozilla-product-details#egg=django-mozilla-product-details

@@ -119,4 +119,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.admin',
+
+    'product_details',
 )
+
+# Where to store product details
+PROD_DETAILS_DIR = path('lib/product_details_json')
