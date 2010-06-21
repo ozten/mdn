@@ -1,0 +1,11 @@
+# Django stuff
+Django==1.2.1
+
+# DB stuff
+-e git://github.com/jbalogh/schematic.git#egg=schematic
+
+# Templates
+-e git://github.com/jbalogh/jingo.git#egg=jingo
+
+# Caching.
+python-memcached==1.45
