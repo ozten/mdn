@@ -6,6 +6,7 @@ Django==1.2.1
 
 # Templates
 -e git://github.com/jbalogh/jingo.git#egg=jingo
+-e git://github.com/jsocol/jingo-minify.git#egg=jingo-minify
 
 # Caching.
 python-memcached==1.45

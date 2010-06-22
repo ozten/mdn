@@ -14,7 +14,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 LOG_LEVEL = logging.DEBUG
-SYSLOG_TAG = "http_app_reporter"
+SYSLOG_TAG = "http_app_mdn"
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -82,7 +82,6 @@ ADMIN_MEDIA_PREFIX = '/admin-media/'
 SECRET_KEY = '2y6$4oo&+)xem8_os$i&&)w-6za_461*z*0_po147xg0@04kzv'
 
 # Templates
-
 TEMPLATE_DIRS = (
     path('templates'),
 )
@@ -100,6 +99,21 @@ def JINJA_CONFIG():
                              'jinja2.ext.i18n'],
               'finalize': lambda x: x if x is not None else ''}
     return config
+
+# Bundles is a dictionary of two dictionaries, css and js, which list css files
+# and js files that can be bundled together by the jingo-minify app.
+MINIFY_BUNDLES = {
+    'css': {
+        'common': (
+            'css/print.css',
+        ),
+    },
+    'js': {
+        'common': (
+            'js/jquery-1.4.2.min.js',
+        ),
+    },
+}
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
@@ -120,6 +134,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 
+    'mdn',
+
+    'jingo_minify',
     'product_details',
     'tower',
 )
