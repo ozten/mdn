@@ -3,7 +3,10 @@
 import os
 import logging
 
-# Make filepaths relative to settings.
+import product_details
+
+
+# Make file paths relative to settings.
 ROOT = os.path.dirname(os.path.abspath(__file__))
 path = lambda *a: os.path.join(ROOT, *a)
 
@@ -16,10 +19,11 @@ TEMPLATE_DEBUG = DEBUG
 LOG_LEVEL = logging.DEBUG
 SYSLOG_TAG = "http_app_mdn"
 
+SITE_ID = 1
+
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
-
 MANAGERS = ADMINS
 
 DATABASES = {
@@ -41,6 +45,16 @@ DATABASES = {
 #CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
 CACHE_DEFAULT_PERIOD = 60 * 5  # 5 minutes
 
+# L10n
+
+# If you set this to False, Django will make some optimizations so as not
+# to load the internationalization machinery.
+USE_I18N = True
+
+# If you set this to False, Django will not format dates, numbers and
+# calendars according to the current locale
+USE_L10N = True
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -52,17 +66,20 @@ TIME_ZONE = 'America/Los_Angeles'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-US'
 
-SITE_ID = 1
+# Accepted locales
+MDN_LANGUAGES = ('en-US',)
 
-# If you set this to False, Django will make some optimizations so as not
-# to load the internationalization machinery.
-USE_I18N = True
+# Override Django's built-in with our native names
+try:
+    LANGUAGES = dict([(i.lower(), product_details.languages[i]['native'])
+                      for i in MDN_LANGUAGES])
+except AttributeError: # product_details not available yet
+    LANGUAGES = {}
+RTL_LANGUAGES = None # ('ar', 'fa', 'fa-IR', 'he')
+LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in MDN_LANGUAGES])
 
-# If you set this to False, Django will not format dates, numbers and
-# calendars according to the current locale
-USE_L10N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -91,6 +108,17 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.core.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.media',
+    'django.core.context_processors.request',
+    'django.core.context_processors.csrf',
+
+    'common.context_processors.i18n',
+    'jingo_minify.helpers.build_ids',
 )
 
 def JINJA_CONFIG():
@@ -134,7 +162,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 
-    'mdn',
+    'common',
 
     'jingo_minify',
     'product_details',
