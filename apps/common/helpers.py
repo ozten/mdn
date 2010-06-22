@@ -7,6 +7,11 @@ import jinja2
 
 
 @register.function
+def page_title(title):
+    return u'%s | Mozilla Developer Network' % title
+
+
+@register.function
 def thisyear():
     """The current year."""
     return jinja2.Markup(datetime.date.today().year)
