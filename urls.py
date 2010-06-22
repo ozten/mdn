@@ -1,17 +1,21 @@
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
+import jingo
+
+
 # admin.autodiscover()
 
+def _error_page(request, status):
+    """Render error pages with jinja2."""
+    return jingo.render(request, '%d.html' % status, status=status)
+handler404 = lambda r: _error_page(r, 404)
+handler500 = lambda r: _error_page(r, 500)
+
+
 urlpatterns = patterns('',
-    # Example:
-    # (r'^mdn/', include('mdn.foo.urls')),
+    # Home / landing pages:
+    ('', include('landing.urls')),
 
-    # Uncomment the admin/doc line below and add 'django.contrib.admindocs' 
-    # to INSTALLED_APPS to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
+    # Django admin:
     # (r'^admin/', include(admin.site.urls)),
 )

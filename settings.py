@@ -133,12 +133,20 @@ def JINJA_CONFIG():
 MINIFY_BUNDLES = {
     'css': {
         'common': (
-            'css/print.css',
+            'css/screen.css',
         ),
     },
     'js': {
         'common': (
             'js/jquery-1.4.2.min.js',
+
+            # Home Page
+            # cycle and slideshow only needed on the home page (or any page
+            # featuring the slide show widget).
+            'js/jquery.cycle.js',
+            'js/slideshow.js',
+            'js/TabInterface.js',
+            'js/home.js',
         ),
     },
 }
@@ -163,6 +171,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'common',
+    'landing',
 
     'jingo_minify',
     'product_details',
