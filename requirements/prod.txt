@@ -10,5 +10,10 @@ Django==1.2.1
 # Caching.
 python-memcached==1.45
 
+# L10n.
+Babel>=0.9.4
+-e git://github.com/clouserw/tower.git#egg=tower
+pytz
+
 # Data.
 -e git://github.com/fwenzel/django-mozilla-product-details#egg=django-mozilla-product-details

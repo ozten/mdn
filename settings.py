@@ -110,7 +110,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'mdn.urls'
+ROOT_URLCONF = '%s.urls' % ROOT_PACKAGE
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -121,6 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'product_details',
+    'tower',
 )
 
 # Where to store product details
