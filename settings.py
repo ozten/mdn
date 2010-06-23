@@ -80,6 +80,9 @@ except AttributeError: # product_details not available yet
 RTL_LANGUAGES = None # ('ar', 'fa', 'fa-IR', 'he')
 LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in MDN_LANGUAGES])
 
+# Paths that don't require a locale prefix.
+SUPPORTED_NONLOCALES = ('media', 'admin')
+
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -117,14 +120,14 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
     'django.core.context_processors.csrf',
 
-    'common.context_processors.i18n',
+    'devmo.context_processors.i18n',
     'jingo_minify.helpers.build_ids',
 )
 
 def JINJA_CONFIG():
     import jinja2
     config = {'extensions': ['jinja2.ext.with_', 'jinja2.ext.loopcontrols',
-                             'jinja2.ext.i18n'],
+                             'tower.template.i18n'],
               'finalize': lambda x: x if x is not None else ''}
     return config
 
@@ -152,6 +155,8 @@ MINIFY_BUNDLES = {
 }
 
 MIDDLEWARE_CLASSES = (
+    'devmo.middleware.LocaleURLMiddleware',
+
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,7 +175,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.admin',
 
-    'common',
+    'devmo',
     'landing',
 
     'jingo_minify',
