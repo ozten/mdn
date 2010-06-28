@@ -1,5 +1,6 @@
 # Django stuff
 Django==1.2.1
+-e git://github.com/jsocol/commonware.git#egg=commonware
 
 # DB stuff
 -e git://github.com/jbalogh/schematic.git#egg=schematic

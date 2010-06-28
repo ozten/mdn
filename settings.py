@@ -16,9 +16,6 @@ ROOT_PACKAGE = os.path.basename(ROOT)
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
-LOG_LEVEL = logging.DEBUG
-SYSLOG_TAG = "http_app_mdn"
-
 SITE_ID = 1
 
 ADMINS = (
@@ -183,6 +180,19 @@ INSTALLED_APPS = (
     'product_details',
     'tower',
 )
+
+# Logging
+LOG_LEVEL = logging.DEBUG
+HAS_SYSLOG = True # syslog is used if HAS_SYSLOG and NOT DEBUG.
+SYSLOG_TAG = "http_app_mdn"
+# See PEP 391 and log_settings.py for formatting help. Each section of LOGGING
+# will get merged into the corresponding section of log_settings.py.
+# Handlers and log levels are set up automatically based on LOG_LEVEL and DEBUG
+# unless you set them here. Messages will not propagate through a logger
+# unless propagate: True is set.
+LOGGING = {
+    'loggers': {},
+}
 
 # Where to store product details
 PROD_DETAILS_DIR = path('lib/product_details_json')
