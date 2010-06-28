@@ -1,9 +1,10 @@
 from django.conf.urls.defaults import *
+from django.contrib import admin
 
 import jingo
 
 
-# admin.autodiscover()
+admin.autodiscover()
 
 def _error_page(request, status):
     """Render error pages with jinja2."""
@@ -17,5 +18,5 @@ urlpatterns = patterns('',
     ('', include('landing.urls')),
 
     # Django admin:
-    # (r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
 )

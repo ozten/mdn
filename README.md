@@ -53,6 +53,10 @@ You want to update your product details periodically:
 
 The frequency is up to you, but anything quicker than once per hour is probably overkill.
 
+Also, to update RSS feeds:
+
+    ./manage.py update_feeds
+
 License
 -------
 This software is licensed under the [Mozilla Tri-License][MPL]:

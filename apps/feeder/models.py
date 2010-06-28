@@ -63,3 +63,7 @@ class Entry(models.Model):
 
     class Meta:
         unique_together = ('feed', 'guid')
+        verbose_name_plural = 'Entries'
+
+    def __unicode__(self):
+        return '%s: %s' % (self.feed.shortname, self.guid)
