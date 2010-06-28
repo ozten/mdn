@@ -142,6 +142,7 @@ MINIFY_BUNDLES = {
     'js': {
         'common': (
             'js/jquery-1.4.2.min.js',
+            'js/init.js',
 
             # Home Page
             # cycle and slideshow only needed on the home page (or any page
