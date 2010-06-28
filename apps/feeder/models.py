@@ -1,5 +1,9 @@
 from django.db import models
 
+import jsonpickle
+
+import utils
+
 
 class Feed(models.Model):
     """A feed holds the metadata of an RSS feed."""
@@ -42,6 +46,10 @@ class Feed(models.Model):
             # DELETE statement.
             item.delete()
 
+    def recent_entries(self):
+        """Most recent entries."""
+        return self.entries.order_by('-last_published')
+
 
 class Entry(models.Model):
     """An entry is an item representing feed content."""
@@ -67,3 +75,8 @@ class Entry(models.Model):
 
     def __unicode__(self):
         return '%s: %s' % (self.feed.shortname, self.guid)
+
+    @utils.cached_property
+    def parsed(self):
+        """Unpickled feed data."""
+        return jsonpickle.decode(self.raw)

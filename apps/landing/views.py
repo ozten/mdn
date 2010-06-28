@@ -1,5 +1,7 @@
 import jingo
 
+from feeder.models import Feed
+
 
 def home(request):
     """Home page."""
@@ -28,4 +30,9 @@ def mobile(request):
 
 def web(request):
     """Web landing page."""
-    return jingo.render(request, 'landing/web.html')
+
+    # Recent updates.
+    updates = Feed.objects.get(shortname='moz-hacks').recent_entries()[:5]
+
+    return jingo.render(request, 'landing/web.html', {
+        'updates': updates})

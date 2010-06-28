@@ -2,15 +2,39 @@ import cgi
 import datetime
 import urlparse
 
-from .urlresolvers import reverse
+from django.conf import settings
+from django.template import defaultfilters
 
 from jingo import register
 import jinja2
+import pytz
+
+import utils
+from .urlresolvers import reverse
+
+
+# Yanking filters from Django.
+register.filter(defaultfilters.truncatewords)
+
+
+register.filter(utils.entity_decode)
 
 
 @register.function
 def page_title(title):
     return u'%s | Mozilla Developer Network' % title
+
+
+@register.filter
+def isotime(t):
+    """Date/Time format according to ISO 8601"""
+    if not hasattr(t, 'tzinfo'):
+        return
+    return _append_tz(t).astimezone(pytz.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+def _append_tz(t):
+    tz = pytz.timezone(settings.TIME_ZONE)
+    return tz.localize(t)
 
 
 @register.function
