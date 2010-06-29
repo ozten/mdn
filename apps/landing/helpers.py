@@ -7,6 +7,12 @@ import jinja2
 import pytz
 
 
+@register.inclusion_tag('landing/newsfeed.html')
+def newsfeed(entries):
+    """Landing page news feed."""
+    return {'updates': entries}
+
+
 @register.inclusion_tag('sidebar/twitter.html')
 @jinja2.contextfunction
 def twitter(context, tweets, limit=5):

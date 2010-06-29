@@ -25,7 +25,15 @@ def docs(request):
 
 def mobile(request):
     """Mobile landing page."""
-    return jingo.render(request, 'landing/mobile.html')
+
+    # Recent updates.
+    updates = Feed.objects.get(shortname='planet-mobile').recent_entries()[:5]
+
+    # Twitter feed.
+    tweets = Bundle.objects.get(shortname='twitter-mobile').recent_entries()[:5]
+
+    return jingo.render(request, 'landing/mobile.html', {
+        'updates': updates, 'tweets': tweets})
 
 
 def web(request):

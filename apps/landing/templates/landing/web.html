@@ -85,17 +85,9 @@
         <header class="subhead">
           <h3>Recent <span class="web">Web</span> News &amp; Updates</h3>
         </header>
-        <ul class="hfeed">
-          {% for entry in updates %}
-            {% with e = entry.parsed %}
-            <li class="hentry">
-              <h4 class="entry-title"><a href="{{ e.link }}" rel="bookmark">{{ e.title|entity_decode }}</a></h4>
-              <p class="entry-summary">{{ e.summary|entity_decode }}</p>
-              <p class="entry-meta">Written by: <cite class="author vcard">{{ e.author }}</a></cite> on <abbr class="updated" title="{{ entry.last_published|datetime('%Y-%m-%d')}}">{{ entry.last_published|datetime }}</abbr></p>
-            </li>
-            {% endwith %}
-          {% endfor %}
-        </ul>
+
+        {{ newsfeed(updates) }}
+
         <p class="all"><a href="http://hacks.mozilla.org" class="go">All web development entries</a></p>
       </div>
     </section><!-- /.boxed -->
@@ -224,7 +216,7 @@
   </div>
 
 </div>
-#}
 
 </section>
+#}
 {% endblock %}
