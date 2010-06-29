@@ -5,6 +5,17 @@ import jsonpickle
 import utils
 
 
+class Bundle(models.Model):
+    """A bundle of several feeds. A feed can be in several (or no) bundles."""
+
+    shortname = models.SlugField(
+        help_text='Short name to find this bundle by.', unique=True)
+    feeds = models.ManyToManyField('feeder.Feed', related_name='bundles')
+
+    def __unicode__(self):
+        return self.shortname
+
+
 class Feed(models.Model):
     """A feed holds the metadata of an RSS feed."""
 
@@ -20,7 +31,7 @@ class Feed(models.Model):
 
     # If a feed has (severe) issues, it will be disabled
     enabled = models.BooleanField(default=True)
-    disabled_reason = models.CharField(max_length=2048)
+    disabled_reason = models.CharField(max_length=2048, blank=True)
 
     keep = models.PositiveIntegerField(
         default=0, help_text=('Discard all but this amount of entries. 0 == '
@@ -32,7 +43,7 @@ class Feed(models.Model):
         auto_now=True, verbose_name='Last Modified')
 
     def __unicode__(self):
-        return self.url
+        return self.shortname
 
     def delete_old_entries(self):
         """Delete entries that exceed the amount we want to keep."""
