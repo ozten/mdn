@@ -15,6 +15,11 @@ class Bundle(models.Model):
     def __unicode__(self):
         return self.shortname
 
+    def recent_entries(self):
+        """Most recent entries."""
+        return Entry.objects.filter(feed__bundles=self).order_by(
+            '-last_published')
+
 
 class Feed(models.Model):
     """A feed holds the metadata of an RSS feed."""

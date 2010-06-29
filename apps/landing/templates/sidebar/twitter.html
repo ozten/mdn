@@ -1,0 +1,14 @@
+<div class="module" id="mdn-twitter">
+  <h3 class="mod-title">MDN on Twitter</h3>
+  <p class="mod-intro">Correspondence on Twitter from the Mozilla Developer Community staff.</p>
+  <ul class="hfeed">
+    {% for tweet in tweets %}
+    <li class="hentry">
+      <h4 class="entry-title vcard">@<a href="http://twitter.com/{{ tweet['nick'] }}" class="author url fn nickname">{{ tweet['nick'] }}</a> from <a href="{{ url(tweet['section']) }}" class="category {{ tweet['section'] }}">{{ tweet['section'] }}</a> says:</h4>
+      <p class="entry-content">{{ tweet['status'] }}</p>
+      <p class="entry-meta"><a href="{{ tweet['link'] }}" rel="bookmark">{{ tweet['published']|timesince }} ago</a></p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p id="follow"><a href="#">Follow <b>MDN</b> on Twitter</a></p>
+</div>

@@ -1,6 +1,6 @@
 import jingo
 
-from feeder.models import Feed
+from feeder.models import Bundle, Feed
 
 
 def home(request):
@@ -34,5 +34,8 @@ def web(request):
     # Recent updates.
     updates = Feed.objects.get(shortname='moz-hacks').recent_entries()[:5]
 
+    # Twitter feed.
+    tweets = Bundle.objects.get(shortname='twitter-web').recent_entries()[:5]
+
     return jingo.render(request, 'landing/web.html', {
-        'updates': updates})
+        'updates': updates, 'tweets': tweets})

@@ -200,6 +200,3 @@ PROD_DETAILS_DIR = path('lib/product_details_json')
 
 # Feed fetcher config
 FEEDER_TIMEOUT = 6 # in seconds
-
-# Tuple of feed bundle names to show combined on home page
-HOME_TWITTER_BUNDLES = ('twitter-web', 'twitter-mobile')

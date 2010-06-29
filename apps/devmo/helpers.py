@@ -14,6 +14,7 @@ from .urlresolvers import reverse
 
 
 # Yanking filters from Django.
+register.filter(defaultfilters.timesince)
 register.filter(defaultfilters.truncatewords)
 
 
