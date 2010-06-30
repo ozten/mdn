@@ -135,6 +135,9 @@ class Command(NoArgsCommand):
             dirty_feed = True
         elif url_status == '304':
             log.debug("Feed unchanged")
+            if not feed.enabled:
+                feed.enabled = True
+                dirty_feed = True
         elif url_status == '404':
             log.info("Not a Feed or Feed %s is gone", feed.url)
             feed.enabled = False
@@ -160,7 +163,11 @@ class Command(NoArgsCommand):
             dirty_feed = True
         else:
             # We've got a live one...
-            feed.disabled_reason = '' # reset
+            if not feed.enabled or feed.disabled_reason:
+                # Reset disabled status.
+                feed.enabled = True
+                feed.disabled_reason = ''
+                dirty_feed = True
             has_updates = True
 
         if stream.has_key("etag") and stream.etag != feed.etag and stream.etag != None:
@@ -213,7 +220,8 @@ class Command(NoArgsCommand):
                 new_entry.save()
                 return True
             except IntegrityError, e:
-                log.info('Skipping duplicate entry %s, caught error: %s', entry_guid, e)
+                #log.debug('Skipping duplicate entry %s, caught error: %s', entry_guid, e)
+                pass
 
         except KeyboardInterrupt:
             raise
