@@ -21,4 +21,7 @@ popd > /dev/null
 # Run database migrations.
 vendor/src/schematic/schematic migrations/
 
+# Minify assets.
+./manage.py compress_assets
+
 popd > /dev/null
