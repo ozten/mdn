@@ -11,6 +11,7 @@ Django==1.2.1
 
 # Caching.
 python-memcached==1.45
+-e git://github.com/jbalogh/django-cache-machine.git#egg=django-cache-machine
 
 # L10n.
 Babel>=0.9.4

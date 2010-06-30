@@ -38,9 +38,10 @@ DATABASES = {
     }
 }
 
-# Caching
-#CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
-CACHE_DEFAULT_PERIOD = 60 * 5  # 5 minutes
+# Cache Settings
+#CACHE_BACKEND = 'caching.backends.memcached://localhost:11211'
+CACHE_PREFIX = 'mdn:'
+CACHE_COUNT_TIMEOUT = 60  # seconds
 
 # L10n
 
@@ -123,9 +124,20 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 def JINJA_CONFIG():
     import jinja2
+    from django.conf import settings
+    from caching.base import cache
     config = {'extensions': ['jinja2.ext.with_', 'jinja2.ext.loopcontrols',
-                             'tower.template.i18n'],
+                             'tower.template.i18n', 'caching.ext.cache', ],
               'finalize': lambda x: x if x is not None else ''}
+    if 'memcached' in cache.scheme and not settings.DEBUG:
+        # We're passing the _cache object directly to jinja because
+        # Django can't store binary directly; it enforces unicode on it.
+        # Details: http://jinja.pocoo.org/2/documentation/api#bytecode-cache
+        # and in the errors you get when you try it the other way.
+        bc = jinja2.MemcachedBytecodeCache(cache._cache,
+                                           "%sj2:" % settings.CACHE_PREFIX)
+        config['cache_size'] = -1 # Never clear the cache
+        config['bytecode_cache'] = bc
     return config
 
 # Bundles is a dictionary of two dictionaries, css and js, which list css files

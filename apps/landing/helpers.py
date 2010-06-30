@@ -38,5 +38,5 @@ def twitter(context, tweets, limit=5):
         })
 
     c = dict(context.items())
-    c.update({'tweets': tweet_data})
+    c.update({'tweets': tweet_data, 'tweet_qs': tweets})
     return c

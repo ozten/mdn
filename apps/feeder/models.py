@@ -2,10 +2,11 @@ from django.db import models
 
 import jsonpickle
 
+from devmo.models import ModelBase
 import utils
 
 
-class Bundle(models.Model):
+class Bundle(ModelBase):
     """A bundle of several feeds. A feed can be in several (or no) bundles."""
 
     shortname = models.SlugField(
@@ -21,7 +22,7 @@ class Bundle(models.Model):
             '-last_published')
 
 
-class Feed(models.Model):
+class Feed(ModelBase):
     """A feed holds the metadata of an RSS feed."""
 
     shortname = models.SlugField(
@@ -67,7 +68,7 @@ class Feed(models.Model):
         return self.entries.order_by('-last_published')
 
 
-class Entry(models.Model):
+class Entry(ModelBase):
     """An entry is an item representing feed content."""
 
     feed = models.ForeignKey(Feed, related_name='entries')
