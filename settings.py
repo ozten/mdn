@@ -163,6 +163,7 @@ MINIFY_BUNDLES = {
         ),
     },
 }
+JAVA_BIN = '/usr/bin/java'
 
 MIDDLEWARE_CLASSES = (
     'devmo.middleware.LocaleURLMiddleware',
