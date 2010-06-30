@@ -4,3 +4,8 @@ settings_local.py
 pip-log.txt
 .DS_Store
 vendor/
+build.py
+*-min.css
+*-all.css
+*-min.js
+*-all.js

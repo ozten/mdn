@@ -5,7 +5,7 @@
 /
 / Additional Requirements:
 / 1. jQuery (http://jquery.com)
-/ 2. Cycle plugin for jQuery (http://malsup.com/jquery/cycle/) 
+/ 2. Cycle plugin for jQuery (http://malsup.com/jquery/cycle/)
 /*****/
 
 $slideshow = {
@@ -23,7 +23,7 @@ $slideshow = {
         // set tabs to current hard coded navigation items
         this.tabs = $('ol#slide-control li', this.context);
 
-        // remove hard coded navigation items from DOM 
+        // remove hard coded navigation items from DOM
         // because they aren't hooked up to jQuery cycle
         this.tabs.remove();
 
@@ -33,7 +33,7 @@ $slideshow = {
 
     prepareSlideshow: function() {
         // initialise the jquery cycle plugin -
-        // for information on the options set below go to: 
+        // for information on the options set below go to:
         // http://malsup.com/jquery/cycle/options.html
         $('ol#slides', $slideshow.context).cycle({
             fx: $slideshow.fx,
@@ -57,16 +57,16 @@ $slideshow = {
     activateTab: function(currentSlide, nextSlide) {
         // get the active tab
         var activeTab = $('a[href="#' + nextSlide.id + '"]', $slideshow.context);
-        
+
         // if there is an active tab
         if(activeTab.length) {
             // remove active styling from all other tabs
             $slideshow.tabs.removeClass('on');
-            
+
             // add active styling to active button
             activeTab.parents('li').addClass('on');
-        }            
-    }            
+        }
+    }
 };
 
 $(function() {
