@@ -1,6 +1,6 @@
 import jingo
 
-from devmo import SECTION_USAGE, SECTION_MOBILE, SECTION_WEB
+from devmo import SECTION_USAGE, SECTION_ADDONS, SECTION_MOBILE, SECTION_WEB
 from feeder.models import Bundle, Feed
 
 
@@ -19,7 +19,13 @@ def home(request):
 
 def addons(request):
     """Add-ons landing page."""
-    return jingo.render(request, 'landing/addons.html')
+    extra = {
+        'discussions': Feed.objects.get(
+            shortname='amo-forums').entries.all()[:4],
+        'comments': Feed.objects.get(
+            shortname='amo-blog-comments').entries.all()[:4],
+    }
+    return common_landing(request, section=SECTION_ADDONS, extra=extra)
 
 
 def apps(request):
@@ -42,7 +48,7 @@ def web(request):
     return common_landing(request, section=SECTION_WEB)
 
 
-def common_landing(request, section=None):
+def common_landing(request, section=None, extra=None):
     """Common code for landing pages."""
     if not section:
         raise NotImplementedError
@@ -50,5 +56,8 @@ def common_landing(request, section=None):
     updates = Bundle.objects.recent_entries(section.updates)[:5]
     tweets = Bundle.objects.recent_entries(section.twitter)[:5]
 
-    return jingo.render(request, 'landing/%s.html' % section.short, {
-        'updates': updates, 'tweets': tweets})
+    data = {'updates': updates, 'tweets': tweets}
+    if extra:
+        data.update(extra)
+
+    return jingo.render(request, 'landing/%s.html' % section.short, data)

@@ -1,0 +1,13 @@
+{% cache updates %}
+<ul class="hfeed">
+  {% for entry in updates %}
+    {% with e = entry.parsed %}
+      <li class="hentry">
+      <cite class="author vcard">{{ e.author }}</cite>
+      wrote <a href="{{ e.link }}" class="entry-summary entry-title">{{
+        (e.summary or e.subtitle)|strip_tags|entity_decode|truncatewords(30) }}</a></p>
+      </li>
+    {% endwith %}
+  {% endfor %}
+</ul>
+{% endcache %}
