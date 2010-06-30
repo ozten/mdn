@@ -1,9 +1,25 @@
 from django.db import models
 
+import caching.base
 import jsonpickle
 
+from devmo import SECTIONS_TWITTER, SECTIONS_UPDATES
 from devmo.models import ModelBase
 import utils
+
+
+class BundleManager(caching.base.CachingManager):
+    """Custom manager for bundles."""
+
+    def recent_entries(self, bundles):
+        """Most recent entries."""
+        if isinstance(bundles, basestring):
+            # Single bundle.
+            return Entry.objects.filter(feed__bundles__shortname=bundles)
+        else:
+            # Sequence of bundles.
+            return Entry.objects.filter(
+                feed__bundles__shortname__in=bundles)
 
 
 class Bundle(ModelBase):
@@ -11,15 +27,13 @@ class Bundle(ModelBase):
 
     shortname = models.SlugField(
         help_text='Short name to find this bundle by.', unique=True)
-    feeds = models.ManyToManyField('feeder.Feed', related_name='bundles')
+    feeds = models.ManyToManyField('feeder.Feed', related_name='bundles',
+                                   blank=True)
+
+    objects = BundleManager()
 
     def __unicode__(self):
         return self.shortname
-
-    def recent_entries(self):
-        """Most recent entries."""
-        return Entry.objects.filter(feed__bundles=self).order_by(
-            '-last_published')
 
 
 class Feed(ModelBase):
@@ -63,10 +77,6 @@ class Feed(ModelBase):
             # DELETE statement.
             item.delete()
 
-    def recent_entries(self):
-        """Most recent entries."""
-        return self.entries.order_by('-last_published')
-
 
 class Entry(ModelBase):
     """An entry is an item representing feed content."""
@@ -87,6 +97,7 @@ class Entry(ModelBase):
         auto_now=True, verbose_name='Last Modified')
 
     class Meta:
+        ordering = ['-last_published']
         unique_together = ('feed', 'guid')
         verbose_name_plural = 'Entries'
 
@@ -97,3 +108,13 @@ class Entry(ModelBase):
     def parsed(self):
         """Unpickled feed data."""
         return jsonpickle.decode(self.raw)
+
+    @utils.cached_property
+    def section(self):
+        """The section this entry is associated with."""
+        try:
+            bundle = self.feed.bundles.all()[0].shortname
+        except IndexError:
+            return None
+        return SECTIONS_TWITTER.get(bundle, SECTIONS_UPDATES.get(
+            bundle, None))

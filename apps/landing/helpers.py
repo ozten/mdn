@@ -6,33 +6,29 @@ from jingo import register
 import jinja2
 import pytz
 
+from devmo import SECTIONS, SECTION_USAGE
+
 
 @register.inclusion_tag('landing/newsfeed.html')
-def newsfeed(entries):
+def newsfeed(entries, section_headers=False):
     """Landing page news feed."""
-    return {'updates': entries}
+    return {'updates': entries, 'section_headers': section_headers}
 
 
 @register.inclusion_tag('sidebar/twitter.html')
 @jinja2.contextfunction
-def twitter(context, tweets, limit=5):
+def twitter(context, tweets):
     """Twitter box in the sidebar."""
     tweet_data = []
-    for tweet in tweets[:limit]:
+    for tweet in tweets:
         (nick, status) = tweet.parsed.summary.split(':', 1)
-        try:
-            # Bundles should be called "twitter-web" etc.
-            section = tweet.feed.bundles.all()[0].shortname.split(
-                'twitter-', 1)[1]
-        except IndexError:
-            section = 'web' # TODO proper fallback?
         published = datetime.datetime(*tweet.parsed.updated_parsed[:6],
                                       tzinfo=pytz.utc)
 
         tweet_data.append({
             'nick': nick,
             'status': status,
-            'section': section,
+            'section': tweet.section,
             'link': tweet.parsed.link,
             'published': published,
         })
