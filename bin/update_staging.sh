@@ -19,9 +19,9 @@ $GIT submodule update --init
 popd > /dev/null
 
 # Run database migrations.
-vendor/src/schematic/schematic migrations/
+$PYTHON vendor/src/schematic/schematic migrations/
 
 # Minify assets.
-./manage.py compress_assets
+$PYTHON manage.py compress_assets
 
 popd > /dev/null
