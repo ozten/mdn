@@ -35,6 +35,7 @@ to install the required Python libraries.
 To initialize the database, run:
 
     ./manage.py syncdb
+    schematic migrations/  # run schema migrations and add initial data
 
 and to fetch the initial product details data, run:
 
