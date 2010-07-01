@@ -5,5 +5,5 @@ INSERT INTO `feeder_bundle` (`id`, `shortname`) VALUES
 (8, 'updates-web');
 
 INSERT INTO `feeder_bundle_feeds` (`id`, `bundle_id`, `feed_id`) VALUES 
-(5, 7, 6),
-(6, 8, 1);
+(7, 7, 6),
+(8, 8, 1);

@@ -6,5 +6,4 @@ INSERT INTO `feeder_feed` (`id`, `shortname`, `url`, `enabled`, `keep`, `created
 ;
 
 INSERT INTO `feeder_bundle_feeds` (`id`, `bundle_id`, `feed_id`) VALUES
-(7, 6, 10),
-(8, 3, 7);
+(9, 6, 10);
