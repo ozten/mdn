@@ -1,6 +1,7 @@
 import jingo
 
-from devmo import SECTION_USAGE, SECTION_ADDONS, SECTION_MOBILE, SECTION_WEB
+from devmo import (SECTION_USAGE, SECTION_ADDONS, SECTION_APPS, SECTION_MOBILE,
+                   SECTION_WEB)
 from feeder.models import Bundle, Feed
 
 
@@ -30,7 +31,7 @@ def addons(request):
 
 def apps(request):
     """Applications landing page."""
-    return jingo.render(request, 'landing/apps.html')
+    return common_landing(request, section=SECTION_APPS)
 
 
 def docs(request):
