@@ -23,7 +23,7 @@ def discussions_feed(entries):
 
 @register.inclusion_tag('sidebar/twitter.html')
 @jinja2.contextfunction
-def twitter(context, tweets):
+def twitter(context, tweets, title=None):
     """Twitter box in the sidebar."""
     tweet_data = []
     for tweet in tweets:
@@ -40,5 +40,6 @@ def twitter(context, tweets):
         })
 
     c = dict(context.items())
-    c.update({'tweets': tweet_data, 'tweet_qs': tweets})
+    c.update({'tweets': tweet_data, 'tweet_qs': tweets,
+              'title': title})
     return c

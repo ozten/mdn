@@ -26,7 +26,7 @@
   <!--[if IE]>
   <meta http-equiv="imagetoolbar" content="no">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 </head>
 
@@ -37,7 +37,8 @@
         {% block headerlogo %}
         <h4 id="logo"><a href="{{ url('home') }}"><img src="{{ MEDIA_URL }}img/mdn-logo-sm.png" alt="" width="62" height="71"> Mozilla Developer Network</a></h4>
         {% endblock %}
-        <p id="tagline">A comprehensive, usable &amp; accurate resource for developers using Mozilla Technologies.</p>
+        <p id="tagline">A comprehensive, usable &amp; accurate resource for
+        everyone using Mozilla technologies and developing for the Open Web.</p>
       </div>
 
       <div id="utility">
@@ -57,9 +58,9 @@
 
         <ul id="nav-extra" role="navigation">
           <li id="nav-extra-docs"><a href="{{ url('docs') }}">Docs</a></li>
-          <li id="nav-extra-tools"><a href="#">Tools</a></li>
+          {#<li id="nav-extra-tools"><a href="#">Tools</a></li>#}
           <li id="nav-extra-community"><a href="#">Community</a></li>
-          <li id="nav-extra-labs"><a href="#">Labs</a></li>
+          {#<li id="nav-extra-labs"><a href="#">Labs</a></li>#}
         </ul>
       </nav>
     </div>

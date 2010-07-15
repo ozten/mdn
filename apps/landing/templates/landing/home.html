@@ -7,7 +7,7 @@
 <div class="wrap">
     <p class="intro" id="welcome-devmo"><span class="leadin">Welcome to the Mozilla Deveoper Network, a.k.a.:</span>
     <strong class="devmo">DEVMO</strong>
-    <a href="#" class="go">Learn the history behind Project <em>Devmo</em></a></p>
+    <a href="http://en.wikipedia.org/wiki/Mozilla_Developer_Center" class="go">Learn the history behind Project <em>Devmo</em></a></p>
 
     <p class="extra" id="welcome-new"><strong>New to MDN?</strong> Want to help make our network even better?<br />
     <a href="#" class="go">Here's how to get started</a></p>
@@ -68,17 +68,21 @@
         <p class="intro">Highlighted Mozilla Devloper News &amp; Updates</p>
         {{ newsfeed(updates, section_headers=True) }}
 
+        {#
         <h3>Events</h3>
         <p class="intro">MDN Events</p>
         <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
+        #}
 
         <h3>Docs</h3>
         <p class="intro">Documentation</p>
         <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
 
+        {#
         <h3>Tools</h3>
         <p class="intro">Developer Tools</p>
         <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida.</p>
+        #}
       </div>
     </div>
 
@@ -86,7 +90,7 @@
 
   <aside id="content-sub" role="complementary">
 
-    {{ twitter(tweets) }}
+    {{ twitter(tweets, title=_('Correspondence on Twitter from around the Mozilla Developer Network.')) }}
 
   {# TODO trends etc.
     <div class="module hot" id="hot-content">

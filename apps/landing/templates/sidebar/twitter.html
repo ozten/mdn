@@ -1,7 +1,7 @@
 {% cache tweet_qs %}
 <div class="module" id="mdn-twitter">
   <h3 class="mod-title">MDN on Twitter</h3>
-  <p class="mod-intro">Correspondence on Twitter from the Mozilla Developer Community staff.</p>
+  {% if title %}<p class="mod-intro">{{ title }}</p>{% endif %}
   <ul class="hfeed">
     {% for tweet in tweets %}
     <li class="hentry">
@@ -11,6 +11,6 @@
     </li>
     {% endfor %}
   </ul>
-  <p id="follow"><a href="#">Follow <b>MDN</b> on Twitter</a></p>
+  {#<p id="follow"><a href="#">Follow <b>MDN</b> on Twitter</a></p>#}
 </div>
 {% endcache %}
