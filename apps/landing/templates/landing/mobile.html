@@ -36,38 +36,31 @@
 
         <ul class="hfeed">
           <li class="hentry">
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/mobile">Mobile Wiki</a></h4>
+            <p class="entry-summary">See requirements and best practices for running and testing Firefox for mobile.</p>
+          </li>
+          <li class="hentry">
+            <h4 class="entry-title">Build Great Mobile Add-ons</h4>
+            <p class="entry-summary">Learn about <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Extension Basics</a>, <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Extension Best Practices</a>, helpful <a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Code Snippets</a>, and more.</p>
+          </li>
+          <li class="hentry">
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Location-Aware Applications</a></h4>
+            <p class="entry-summary">Put people on the right path and build Geolocation apps.</p>
+          </li>
+          <li class="hentry">
             <h4 class="entry-title"><a href="http://www.readwriteweb.com/start/2010/01/html5-is-great-for-mobile.php" rel="bookmark">“HTML5 is Great for Mobile, Developers Say”</a></h4>
             <p class="entry-summary"></p>
-
+          </li>
+          <li class="hentry">
             <h4 class="entry-title"><a href="http://www.developer.com/ws/other/article.php/3883891/Top-10-Android-22-Features-Developers-Cant-Wait-to-Use.htm" rel="bookmark">Top 10 Android 2.2 Features Developers Can’t Wait to Use</a></h4>
             <p class="entry-summary"></p>
-
+          </li>
+          <li class="hentry">
             <h4 class="entry-title"><a href="http://en.wikipedia.org/wiki/Mobile_application_development" rel="bookmark">General Mobile Application Development Info</a></h4>
             <p class="entry-summary"></p>
           </li>
         </ul>
         <p class="all"><a href="https://developer.mozilla.org/En/Mobile" class="go">All mobile development documentation</a></p>
-      </div>
-
-      <div id="fave-tools">
-        <header class="subhead">
-          <h3>Favorite <span class="mobile">Mobile</span> Tools</h3>
-        </header>
-        <ul class="tools">
-          <li>
-            <h4><a href="https://wiki.mozilla.org/mobile">Mobile Wiki</a></h4>
-            <p class="desc">See requirements and best practices for running and testing Firefox for mobile.</p>
-          </li>
-          <li>
-            <h4>Build Great Mobile Add-ons</h4>
-            <p class="desc">Learn about <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Extension Basics</a>, <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Extension Best Practices</a>, helpful <a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Code Snippets</a>, and more.</p>
-          </li>
-          <li>
-            <h4><a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Location-Aware Applications</a></h4>
-            <p class="desc">Put people on the right path and build Geolocation apps.</p>
-          </li>
-          <li class="all"><a href="#" class="go">All mobile development tools</a></li>
-        </ul>
       </div>
 
       <div id="recent-news">
@@ -85,7 +78,7 @@
 
   <aside id="content-sub" role="complementary">
 
-    {{ twitter(tweets) }}
+    {{ twitter(tweets, title=_('Correspondence on Twitter from the Mobile developer community.')) }}
 
   {# TODO developer trends etc.
     <div class="module" id="section-trends">
