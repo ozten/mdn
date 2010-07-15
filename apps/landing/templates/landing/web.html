@@ -38,9 +38,13 @@
 
         <ul class="hfeed">
           <li class="hentry">
+            <h4 class="entry-title"><a href="http://hacks.mozilla.org/demos/" rel="bookmark">Hacks Demos</a></h4>
+            <p class="entry-summary">For the latest in open Web technologies, these cool demos are a great way to discover new documentation.</p>
+            {#<p class="entry-meta">Modified by: <cite class="author vcard"><a href="#" class="url fn">Han Solo</a></cite> on <abbr class="updated" title="2010-06-07">Monday, June 7, 2010</abbr> and filed under: <a href="#" rel="tag">CSS3</a>, <a href="#" rel="tag">HTML5</a></p>#}
+          </li>
+          <li class="hentry">
             <h4 class="entry-title"><a href="https://developer.mozilla.org/en/HTML/HTML5" rel="bookmark">HTML5</a></h4>
             <p class="entry-summary">Find out what HTML5 is really all about and how you can develop for a better Web through open standards.</p>
-            {#<p class="entry-meta">Modified by: <cite class="author vcard"><a href="#" class="url fn">Han Solo</a></cite> on <abbr class="updated" title="2010-06-07">Monday, June 7, 2010</abbr> and filed under: <a href="#" rel="tag">CSS3</a>, <a href="#" rel="tag">HTML5</a></p>#}
           </li>
           <li class="hentry">
             <h4 class="entry-title"><a href="https://developer.mozilla.org/en/JavaScript" rel="bookmark">JavaScript</a></h4>
@@ -60,21 +64,21 @@
         </header>
         <ul class="tools">
           <li>
-            <h4><a href="http://getfirebug.com/">Firebug <img src="{{ MEDIA_URL }}img/icn-tool-firebug.png" alt="" width="65" /></a></h4>
+            <h4><a href="http://getfirebug.com/">Firebug <img src="{{ MEDIA_URL }}img/icn-tool-firebug.png" alt="" /></a></h4>
             <p class="desc">The most popular and powerful web development tool.</p>
             <p class="desc"><q>“An absolute necessity for anyone doing serious web development. Awesome!!!!”</q> &ndash; <cite>geckoday via AMO</cite></p>
             {#<p class="meta">Filed under: <a href="#" rel="tag">Category</a>, <a href="#" rel="tag">Category</a></p>#}
           </li>
           <li>
-            <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/60/">Web Developer <img src="{{ MEDIA_URL }}img/icn-tool-devtoolbar.png" alt="" width="65" /></a></h4>
+            <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/60/">Web Developer <img src="{{ MEDIA_URL }}img/icn-tool-devtoolbar.png" alt="" /></a></h4>
             <p class="desc">Firefox Add-on that adds a lot of great developer tools that are just a click away.</p>
           </li>
           <li>
-            <h4><a href="http://code.google.com/speed/page-speed/">Page Speed <img src="{{ MEDIA_URL }}img/icn-tool-pagespeed.png" alt="" width="65" /></a></h4>
+            <h4><a href="http://code.google.com/speed/page-speed/">Page Speed <img src="{{ MEDIA_URL }}img/icn-tool-pagespeed.png" alt="" /></a></h4>
             <p class="desc">Evaluate performance of web pages with this Firefox/Firebug Add-on</p>
           </li>
           <li>
-            <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/6683/">Firecookie <img src="{{ MEDIA_URL }}img/icn-tool-firecookie.png" alt="" width="65" /></a></h4>
+            <h4><a href="https://addons.mozilla.org/en-US/firefox/addon/6683/">Firecookie <img src="{{ MEDIA_URL }}img/icn-tool-firecookie.png" alt="" /></a></h4>
             <p class="desc">Another great Firefox/Firebug Add-on that helps you view and manage cookies in your browser.</p>
           </li>
           <li class="all"><a href="https://addons.mozilla.org/{{ LANG }}/firefox/extensions/web-development/" class="go">All web development tools</a></li>
@@ -96,7 +100,7 @@
 
   <aside id="content-sub" role="complementary">
 
-    {{ twitter(tweets) }}
+    {{ twitter(tweets, title=_('Correspondence on Twitter from the Web developer community.')) }}
 
   {# TODO trends
     <div class="module" id="section-trends">
