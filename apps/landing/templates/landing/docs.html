@@ -26,7 +26,6 @@
       <header class="head">
         <img src="{{ MEDIA_URL }}img/icn-web-med.png" alt="" width="58" height="58" />
         <h2>Popular Topics for <span class="web">Web</span> Developers</h2>
-        <p>List of main documentation topics for web developers summary goes here.</p>
       </header>
       <ul id="doc-topics">
         <li>
@@ -57,12 +56,10 @@
       
       <header class="subhead">
         <h2>Technology Glossary for <span class="web">Web</span> Developers</h2>
-        <p>A comprehensive list of terms to assist web developers copy goes here.</p>
+        <p>A comprehensive list of terms to help Web developers find the documentation they need.</p>
       </header>
       <ul id="glossary">
         <li>
-          <h3><a href="#">Occaecat cupidatat non proident</a></h3>
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           <ul>
             <li><a href="https://developer.mozilla.org/en/HTML">HTML</a></li>
             <li><a href="https://developer.mozilla.org/en/CSS">CSS</a></li>
@@ -94,39 +91,35 @@
         <h3>Get involved in the <a href="{{ url('mobile') }}" class="mobile">Mobile</a>,
           <a href="{{ url('addons') }}" class="addons">Add-ons</a> &amp;
           <a href="{{ url('apps') }}" class="apps">Applications</a> Developer Communities:</h3>
-        <p>Leads to the different section dashboards summary goes here</p>
       </header>
       <div class="boxed">
         <div class="section">
-          <h4><a href="#" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
+          <h4><a href="{{ url('mobile') }}" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
           <ul>
             <li><a href="https://developer.mozilla.org/en/Mobile">Firefox Mobile for developers</a></li>
             <li><a href="https://developer.mozilla.org/en/Detecting_device_orientation">Detecting device orientation</a></li>
             <li><a href="https://developer.mozilla.org/En/Using_geolocation">Using geolocation</a></li>
           </ul>
-          <p class="lead">Quick Links to <a href="{{ url('mobile') }}">Mobile</a> Dashboard Content.</p>
         </div>
         <div class="section">
-          <h4><a href="#" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
+          <h4><a href="{{ url('addons') }}" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
           <ul>
             <li><a href="https://addons.mozilla.org/en-US/developers/">AMO Developer Hub</a></li>
             <li><a href="https://developer.mozilla.org/en/Extensions">Extensions</a></li>
             <li><a href="https://developer.mozilla.org/en/Plugins">Plugins</a></li>
-            <li><a href="https://developer.mozilla.org/en/Jetpack">Jetpack</a></li>
+            <li><a href="https://builder.mozillalabs.com/">Add-ons Builder</a></li>
             <li><a href="https://developer.mozilla.org/en/Themes">Themes</a></li>
             <li><a href="https://developer.mozilla.org/en/Creating_OpenSearch_plugins_for_Firefox">Search engine plugins</a></li>
           </ul>
-          <p class="lead">Quick Links to <a href="{{ url('addons') }}">Add-ons</a> Dashboard Content.</p>
         </div>
         <div class="section">
-          <h4><a href="#" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
+          <h4><a href="{{ url('apps') }}" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
           <ul>
             <li><a href="https://developer.mozilla.org/En/Participating_in_the_Mozilla_project">Participating in the Mozilla project</a></li>
             <li><a href="https://developer.mozilla.org/En/Using_Mozilla_code_in_other_projects">Using Mozilla code in other projects</a></li>
             <li><a href="https://developer.mozilla.org/en/Localization">Localization</a></li>
             <li><a href="https://developer.mozilla.org/en/QA">Quality Assurance</a></li> 
           </ul>
-          <p class="lead">Quick Links to <a href="{{ url('apps') }}">Applications</a> Dashboard Content.</p>
         </div>
       </div>
     </section>
@@ -134,6 +127,7 @@
   
   <aside id="content-sub" role="complementary">
 
+    {#
     <div class="module" id="top-contribs">
       <h3 class="mod-title">Top Docs Contributors</h3>
       <ol class="gallery">
@@ -147,6 +141,7 @@
         <li><a href="#" title="Yoda"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Yoda" width="32" height="32" /></a></li>
       </ol>
     </div>
+    #}
     
     <div class="module hot" id="most-active">
       <h3 class="mod-title">Most Active Docs</h3>
@@ -179,6 +174,7 @@
       </div>
     </div>
     
+    {#
     <div class="module" id="tools">
       <h3 class="mod-title">Tools</h3>
       <p class="mod-intro">Handcrafted by the community. These tools are tailor-made to assist developers everyday.</p>
@@ -205,12 +201,14 @@
         <li><a href="#" class="support-groups">Support via Google Groups</a></li>
       </ul>
     </div>
+    #}
 
   </aside><!-- /#content-sub -->
 
 </div>
 </section><!-- /#content -->
 
+{#
 <section id="content-latest">
 <div class="wrap">
   
@@ -274,4 +272,5 @@
     
 </div>
 </section>
+#}
 {% endblock %}
