@@ -39,6 +39,11 @@ def docs(request):
     return jingo.render(request, 'landing/docs.html')
 
 
+def search(request):
+    """Google Custom Search results page."""
+    return jingo.render(request, 'landing/searchresults.html')
+
+
 def mobile(request):
     """Mobile landing page."""
     return common_landing(request, section=SECTION_MOBILE)

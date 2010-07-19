@@ -7,5 +7,6 @@ urlpatterns = patterns('landing.views',
     url(r'^apps/?$', 'apps', name='apps'),
     url(r'^docs/?$', 'docs', name='docs'),
     url(r'^mobile/?$', 'mobile', name='mobile'),
+    url(r'^search/?$', 'search', name='search'),
     url(r'^web/?$', 'web', name='web'),
 )

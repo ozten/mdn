@@ -10,16 +10,25 @@
 <section id="content">
 <div class="wrap sidebar">
   <section id="content-main" role="main">
-    <form id="doc-search" method="get" action="#">
+    <form id="doc-search" method="get" action="{{ url('search') }}">
+    <div>
       <p>
-        <input type="text" id="q-docs" name="q-docs" placeholder="Search MDN Documentation"> 
+        {# TODO was: name=q-docs #}
+        <input type="text" id="q-docs" name="q" placeholder="Search MDN Documentation"> 
+        {#
         <select id="doc-filter" name="filter">
           <option value="" selected="selected" disabled="disabled">Filter by tag&hellip;</option>
           <option>Option</option>
           <option>Option</option>
         </select>
-        <button type="submit">Search</button>
+        #}
+        <button type="submit" name="sa">Search</button>{# TODO name=sa is for Google only #}
+        <input type="hidden" name="cx" value="000660177746123454212:ok9qipjrhpa" />
+        <input type="hidden" name="cof" value="FORID:9" />
+        <input type="hidden" name="ie" value="UTF-8" />
       </p>
+    </div>
+    <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
     </form>
   
     <section class="section-intro boxed">

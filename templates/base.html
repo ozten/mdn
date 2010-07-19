@@ -43,11 +43,15 @@
 
       <div id="utility">
         <p class="user-state"><a href="#">Log in</a> | <a href="#">Become an MDN member</a></p>
-        <form id="site-search" method="get" action="https://developer.mozilla.org/Special:Search">
-          {# TODO call this "q" again when search is local. #}
-          <p><input type="text" role="search" placeholder="Search" id="q" name="search" /> <button type="submit">Search</button></p>
-          {# TODO this is for Deki only. #}
-          <input type="hidden" value="fulltext" name="type">
+        <form id="site-search" method="get" action="{{ url('search') }}">
+          <p>
+            <input type="text" role="search" placeholder="Search" id="q" name="q" />
+            <button type="submit" name="sa">Search</button>{# TODO name=sa is for Google only #}
+          </p>
+          <input type="hidden" name="cx" value="000660177746123454212:ok9qipjrhpa" />
+          <input type="hidden" name="cof" value="FORID:9" />
+          <input type="hidden" name="ie" value="UTF-8" />
+          <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
         </form>
       </div>
 
