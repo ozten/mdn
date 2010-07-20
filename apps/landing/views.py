@@ -41,7 +41,8 @@ def docs(request):
 
 def search(request):
     """Google Custom Search results page."""
-    return jingo.render(request, 'landing/searchresults.html')
+    query = request.GET.get('q', '');
+    return jingo.render(request, 'landing/searchresults.html', {'query': query})
 
 
 def mobile(request):

@@ -10,17 +10,10 @@
 <section id="content" class="sidebar">
 <div class="wrap">
   <section id="content-main" role="main">
-    <h1 class="page-title">{{ _('Search Results') }}</h1>
+    <h1 class="page-title">{{ _('Search Results for "{query}"'|f(query=query)) }}</h1>
+    <div id="google-branding"></div>
 
-    <div id="cse-search-results"></div>
-    <script type="text/javascript">
-      var googleSearchIframeName = "cse-search-results";
-      var googleSearchFormName = "cse-search-box";
-      var googleSearchFrameWidth = 600;
-      var googleSearchDomain = "www.google.com";
-      var googleSearchPath = "/cse";
-    </script>
-    <script type="text/javascript" src="//www.google.com/afsonline/show_afs_search.js"></script>
+    <div id="search-results" data-q="{{ query }}"></div>
 
   </section><!-- /#content-main -->
 </div>

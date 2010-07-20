@@ -28,6 +28,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+
+  {% block extrahead %}{% endblock %}
 </head>
 
 <body id="{% block pageid %}{% endblock %}" class="html-{{ DIR }} {% block bodyclass %}{% endblock %}" role="document">
@@ -45,14 +47,11 @@
         <p class="user-state"><a href="#">Log in</a> | <a href="#">Become an MDN member</a></p>
         <form id="site-search" method="get" action="{{ url('search') }}">
           <p>
-            <input type="text" role="search" placeholder="Search" id="q" name="q" />
-            <button type="submit" name="sa">Search</button>{# TODO name=sa is for Google only #}
+            <input type="text" role="search" placeholder="Search" id="q" name="q" value="{{ query }}" />
+            <button type="submit">Search</button>
           </p>
-          <input type="hidden" name="cx" value="000660177746123454212:ok9qipjrhpa" />
-          <input type="hidden" name="cof" value="FORID:9" />
-          <input type="hidden" name="ie" value="UTF-8" />
-          <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
         </form>
+        <div id="site-search-gg"></div>
       </div>
 
       <nav id="nav">
@@ -95,6 +94,7 @@
 
 {# js #}
 {% block site_js %}
+<script src="//www.google.com/jsapi" type="text/javascript"></script>
   {{ js('common') }}
 {% endblock %}
 {% block js %}{% endblock %}

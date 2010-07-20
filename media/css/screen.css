@@ -214,6 +214,8 @@ body.section-labs #nav-extra-labs a:active,
 #site-search #q:hover, #site-search #q:focus { border-color: #7d0d0f; background: #210304; }
 #site-search button { padding: 3px 8px; display: inline-block; background: #630a0c; color: #ccc; font: 200 1em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; border: 0; -moz-border-radius: .25em; -webkit-border-radius: .25em; -border-radius: .25em; }
 #site-search button:hover, #site-search button:focus { background: #7d0d0f; color: #fff; cursor: pointer; }
+#site-search-gg { font-size: 70%; float: left;margin:-1em 0 0 2.5em; }
+#site-search-gg .gsc-branding-text { vertical-align: top; margin-right: .5em; }
 
 /*** @User status *********/
 .user-state { width: 235px; float: right; text-align: right; color: #630a0c; margin: 0 0 1em; }
