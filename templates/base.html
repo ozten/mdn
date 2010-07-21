@@ -45,11 +45,13 @@
 
       <div id="utility">
         <p class="user-state"><a href="#">Log in</a> | <a href="#">Become an MDN member</a></p>
-        <form id="site-search" method="get" action="{{ url('search') }}">
+        <form id="site-search" method="get" action="http://www.google.com/search"
+              data-url="{{ url('search') }}">
           <p>
             <input type="text" role="search" placeholder="Search" id="q" name="q" value="{{ query }}" />
             <button type="submit">Search</button>
           </p>
+          <input type="hidden" name="sitesearch" value="developer.mozilla.org" />
         </form>
         <div id="site-search-gg"></div>
       </div>

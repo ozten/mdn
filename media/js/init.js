@@ -3,6 +3,12 @@
 $(document).ready(function() {
     // Set up input placeholders.
     $('input[placeholder]').placeholder();
+
+    // replace no-JS search with our built-in one
+    var search = $('#site-search');
+    search.attr('action', search.attr('data-url'))
+          .removeAttr('data-url')
+          .children('input[name=sitesearch]').remove();
 });
 
 /* Fake the placeholder attribute since Firefox doesn't support it. */
