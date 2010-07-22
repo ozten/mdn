@@ -22,7 +22,8 @@ pytz
 # Data.
 -e git://github.com/fwenzel/django-mozilla-product-details#egg=django-mozilla-product-details
 
-# Feeds
+# Feeds and cron jobs
 feedparser==4.1
 jsonpickle==0.3.1
 lockfile==0.8
+-e git://github.com/jsocol/django-cronjobs.git#egg=django_cronjobs
