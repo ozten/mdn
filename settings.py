@@ -188,9 +188,11 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     'devmo',
+    'docs',
     'feeder',
     'landing',
 
+    'cronjobs',
     'jingo_minify',
     'product_details',
     'tower',
@@ -209,8 +211,9 @@ LOGGING = {
     'loggers': {},
 }
 
-# Where to store product details
+# Where to store product details etc.
 PROD_DETAILS_DIR = path('lib/product_details_json')
+MDC_PAGES_DIR = path('lib/mdc_pages')
 
 # Feed fetcher config
 FEEDER_TIMEOUT = 6 # in seconds
