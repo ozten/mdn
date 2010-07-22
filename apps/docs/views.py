@@ -9,23 +9,44 @@ import commonware
 from dateutil.parser import parse as date_parse
 import jingo
 
+from feeder.models import Entry
+
 
 log = commonware.log.getLogger('mdn.docs')
 
 def docs(request):
     """Docs landing page."""
+
+    # Doc of the day
     dotd = cached(_get_popular_item, 'mdn_docs_dotd', 24*60*60)
-    data = {'dotd': dotd}
+
+    # Recent updates
+    entries = Entry.objects.filter(feed__shortname='mdc-latest')
+    active_docs = []
+    for entry in entries:
+        parsed = entry.parsed
+        if not parsed.title.lower().startswith('en/'):
+            continue
+        active_docs.append({
+            'title': parsed.title[3:].replace('_', ' '),
+            'link': parsed.link,
+            'author': parsed.author
+        })
+        if len(active_docs) == 5:
+            break
+
+    data = {'active_docs': active_docs, 'dotd': dotd}
     return jingo.render(request, 'docs/docs.html', data)
 
 
 def _get_popular_item():
     """Get a single, random item off the popular pages list."""
-    pages = json.load(open(os.path.join(
-        settings.MDC_PAGES_DIR, 'popular.json')))
-    #except Exception, e:
-    #    log.error(e)
-    #    return None
+    try:
+        pages = json.load(open(os.path.join(
+            settings.MDC_PAGES_DIR, 'popular.json')))
+    except Exception, e:
+        log.error(e)
+        return None
 
     try:
         page = random.choice(pages)

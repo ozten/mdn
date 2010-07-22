@@ -155,20 +155,15 @@
     <div class="module hot" id="most-active">
       <h3 class="mod-title">Most Active Docs</h3>
       <ul class="hfeed">
+        {% for doc in active_docs %}
         <li class="hentry">
-          <h5 class="category"><a href="#" rel="tag" class="apps">Applications</a></h5>
-          <h4 class="entry-title"><a href="#">Lorem ipsum dolor sit amet</a></h4>
-          <p class="entry-summary">Nam dui mi, tincidunt quis, accumsan porttitor&hellip;</p>
-          <p class="entry-meta">Created by: <cite class="author vcard"><a href="#" class="url fn">Jay Patel</a></cite></p>
-          <p class="entry-meta">Filed under: <a href="#" rel="tag">Firefox</a>, <a href="#" rel="tag">Thunderbird</a>, <a href="#" rel="tag">Seamonkey</a></p>
+          {#<h5 class="category"><a href="#" rel="tag" class="apps">Applications</a></h5>#}
+          <h4 class="entry-title"><a href="{{ doc['link'] }}">{{ doc['title']|entity_decode }}</a></h4>
+          {#<p class="entry-summary">Nam dui mi, tincidunt quis, accumsan porttitor&hellip;</p>#}
+          <p class="entry-meta">Last edited by: <cite class="author vcard">{{ doc['author']|entity_decode }}</cite></p>
+          {#<p class="entry-meta">Filed under: <a href="#" rel="tag">Firefox</a>, <a href="#" rel="tag">Thunderbird</a>, <a href="#" rel="tag">Seamonkey</a></p>#}
         </li>
-        <li class="hentry">
-          <h5 class="category"><a href="#" rel="tag" class="addons">Add-ons</a></h5>
-          <h4 class="entry-title"><a href="#">Fusce pellentesque suscipit nibh</a></h4>
-          <p class="entry-summary">Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore tincidunt&hellip;</p>
-          <p class="entry-meta">Modified by: <cite class="author vcard"><a href="#" class="url fn">Morgamic</a></cite></p>
-          <p class="entry-meta">Filed under: <a href="#" rel="tag">Operator</a>, <a href="#" rel="tag">microformats</a></p>
-        </li>
+        {% endfor %}
       </ul>
     </div>
 
