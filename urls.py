@@ -16,6 +16,7 @@ handler500 = lambda r: _error_page(r, 500)
 urlpatterns = patterns('',
     # Home / landing pages:
     ('', include('landing.urls')),
+    ('', include('docs.urls')),
 
     # Django admin:
     (r'^admin/', include(admin.site.urls)),

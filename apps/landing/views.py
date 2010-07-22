@@ -34,11 +34,6 @@ def apps(request):
     return common_landing(request, section=SECTION_APPS)
 
 
-def docs(request):
-    """Docs landing page."""
-    return jingo.render(request, 'landing/docs.html')
-
-
 def search(request):
     """Google Custom Search results page."""
     query = request.GET.get('q', '');
