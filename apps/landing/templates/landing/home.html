@@ -23,26 +23,22 @@
 
   <div id="slideshow">
     <ol id="slide-control">
-      <li id="slide1" class="on">
-        <a href="#slide-one">HTML5</a>
-      </li>
+      <li id="slide1" class="on"><a href="#slide-one">HTML5</a></li>
       <li id="slide2"><a href="#slide-two">Firefox 4 Beta</a></li>
       <li id="slide3"><a href="#slide-three">Doc Sprints</a></li>
     </ol>
     <ol id="slides">
       <li id="slide-one" class="slide">
-        <img src="{{ MEDIA_URL }}img/fpo-slide2.jpg" alt="" width="660">
+        <img src="{{ MEDIA_URL }}img/features/feature-html5.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h3>HTML5</h3>
           <h2>HTML5</h2>
           <p>See what Mozilla is doing to stay ahead of the competition when it comes to open Web innovation.</p>
           <p class="more"><a href="#" class="button">More</a></p>
         </div>
       </li>
       <li id="slide-two" class="slide">
-        <img src="{{ MEDIA_URL }}img/fpo-slide1.jpg" alt="" width="660">
+        <img src="{{ MEDIA_URL }}img/features/feature-firefox4b.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h3>Firefox 4 Beta</h3>
           <h2>Firefox 4 Beta</h2>
           <p>Help us test the latest version of Firefox and help us make it the best browser for the open Web.</p>
           <p class="more"><a href="#" class="button">More</a></p>
@@ -51,7 +47,6 @@
       <li id="slide-three" class="slide">
         <img src="{{ MEDIA_URL }}img/fpo-slide3.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h3>Doc Sprints</h3>
           <h2>Doc Sprints</h2>
           <p>Collaborate with the MDN team to build out documentation for the latest Internet technologies and Web standards.</p>
           <p class="more"><a href="#" class="button">More</a></p>
@@ -65,27 +60,25 @@
 
       <div class="tabbed">
         <h3>Docs</h3>
-        <h4><a href="{{ url('web') }}" class="web"><img src="{{ MEDIA_URL }}img/icn-web-sm.png" alt="" width="44" height="44" />Technology Glossary for <span class="web">Web</span> Developers</a></h4>
+        <h4><img src="{{ MEDIA_URL }}img/icn-web-sm.png" alt="" width="44" height="44" /> Technology Glossary for <a href="{{ url('web') }}" class="web">Web</a> Developers</h4>
         {% include "docs/glossary.html" %}
 
         <section id="other-sections">
-          <div class="boxed">
-            <div class="section">
-              <h4><a href="{{ url('mobile') }}" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
-              <p>Learn more about <a href="https://developer.mozilla.org/en/Mobile">Fennec</a>
-              and mobile-specific technologies like <a href="https://developer.mozilla.org/En/Using_geolocation">geolocation</a>.</p>
-            </div>
-            <div class="section">
-              <h4><a href="{{ url('addons') }}" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
-              <p><a href="https://builder.mozillalabs.com/">Build your own add-ons</a> and discuss them
-              with the <a href="https://addons.mozilla.org/en-US/developers/">add-on developer community</a>.</p>
-            </div>
-            <div class="section">
-              <h4><a href="{{ url('apps') }}" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
-              <p>See how you can <a href="https://developer.mozilla.org/En/Participating_in_the_Mozilla_project">
-                participate</a> in <a href="https://developer.mozilla.org/en/Localization">localization</a>,
-                <a href="https://developer.mozilla.org/en/QA">quality assurance</a>, and other Mozilla projects.</p>
-            </div>
+          <div class="section">
+            <h4><a href="{{ url('mobile') }}" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
+            <p>Learn more about <a href="https://developer.mozilla.org/en/Mobile">Fennec</a>
+            and mobile-specific technologies like <a href="https://developer.mozilla.org/En/Using_geolocation">geolocation</a>.</p>
+          </div>
+          <div class="section">
+            <h4><a href="{{ url('addons') }}" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
+            <p><a href="https://builder.mozillalabs.com/">Build your own add-ons</a> and discuss them
+            with the <a href="https://addons.mozilla.org/en-US/developers/">add-on developer community</a>.</p>
+          </div>
+          <div class="section">
+            <h4><a href="{{ url('apps') }}" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
+            <p>See how you can <a href="https://developer.mozilla.org/En/Participating_in_the_Mozilla_project">
+              participate</a> in <a href="https://developer.mozilla.org/en/Localization">localization</a>,
+              <a href="https://developer.mozilla.org/en/QA">quality assurance</a>, and other Mozilla projects.</p>
           </div>
         </section>
 
