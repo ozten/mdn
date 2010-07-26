@@ -7,8 +7,10 @@ from feeder.models import Bundle, Feed
 
 def home(request):
     """Home page."""
-    twitter_bundles = [ s.twitter for s in SECTION_USAGE ]
-    tweets = Bundle.objects.recent_entries(twitter_bundles)[:5]
+    tweets = []
+    for section in SECTION_USAGE:
+        tweets += Bundle.objects.recent_entries(section.twitter)[:2]
+    tweets.sort(key=lambda t: t.last_published, reverse=True)
 
     updates = []
     for s in SECTION_USAGE:
