@@ -64,6 +64,31 @@
       <h2>Highlights From Around the Network</h2>
 
       <div class="tabbed">
+        <h3>Docs</h3>
+        <h4><a href="{{ url('web') }}" class="web"><img src="{{ MEDIA_URL }}img/icn-web-sm.png" alt="" width="44" height="44" />Technology Glossary for <span class="web">Web</span> Developers</a></h4>
+        {% include "docs/glossary.html" %}
+
+        <section id="other-sections">
+          <div class="boxed">
+            <div class="section">
+              <h4><a href="{{ url('mobile') }}" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
+              <p>Learn more about <a href="https://developer.mozilla.org/en/Mobile">Fennec</a>
+              and mobile-specific technologies like <a href="https://developer.mozilla.org/En/Using_geolocation">geolocation</a>.</p>
+            </div>
+            <div class="section">
+              <h4><a href="{{ url('addons') }}" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
+              <p><a href="https://builder.mozillalabs.com/">Build your own add-ons</a> and discuss them
+              with the <a href="https://addons.mozilla.org/en-US/developers/">add-on developer community</a>.</p>
+            </div>
+            <div class="section">
+              <h4><a href="{{ url('apps') }}" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
+              <p>See how you can <a href="https://developer.mozilla.org/En/Participating_in_the_Mozilla_project">
+                participate</a> in <a href="https://developer.mozilla.org/en/Localization">localization</a>,
+                <a href="https://developer.mozilla.org/en/QA">quality assurance</a>, and other Mozilla projects.</p>
+            </div>
+          </div>
+        </section>
+
         <h3>News &amp; Updates</h3>
         <p class="intro">Highlighted Mozilla Devloper News &amp; Updates</p>
         {{ newsfeed(updates, section_headers=True) }}
@@ -72,13 +97,7 @@
         <h3>Events</h3>
         <p class="intro">MDN Events</p>
         <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
-        #}
 
-        <h3>Docs</h3>
-        <p class="intro">Documentation</p>
-        <p>Morbi interdum mollis sapien. Sed ac risus. Phasellus lacinia, magna a ullamcorper laoreet, lectus arcu pulvinar risus, vitae facilisis libero dolor a purus. Sed vel lacus. Mauris nibh felis, adipiscing varius, adipiscing in, lacinia vel, tellus. Suspendisse ac urna. Etiam pellentesque mauris ut lectus. Nunc tellus ante, mattis eget, gravida vitae, ultricies ac, leo. Integer leo pede, ornare a, lacinia eu, vulputate vel, nisl.</p>
-
-        {#
         <h3>Tools</h3>
         <p class="intro">Developer Tools</p>
         <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida.</p>
