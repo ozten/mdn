@@ -190,7 +190,7 @@ body.section-apps #nav-main-apps a, #nav-main .current a.apps { background-posit
 #nav-extra li { display: inline-block; margin-right: 10px; }
 #nav-extra li:last-child { margin-right: 0; }
 
-#nav-extra a { display: inline-block; color: #fff; height: 22px; padding-bottom: 8px; background: url("../img/nav-arrows.png") 50% 0 no-repeat; }
+#nav-extra a { display: inline-block; color: #f0f0f0; height: 22px; padding-bottom: 8px; background: url("../img/nav-arrows.png") 50% 0 no-repeat; }
 #nav-extra a:hover, #nav-extra a:focus, #nav-extra a:active { color: #f8d575; text-decoration: none; background-position: 50% -14px; }
 
 body.section-docs #nav-extra-docs a, 
@@ -213,11 +213,14 @@ body.section-labs #nav-extra-labs a:focus,
 body.section-labs #nav-extra-labs a:active,
 #nav-extra .current a:hover, #nav-extra .current a:focus, #nav-extra .current a:active { padding-bottom: 8px; border-bottom: 1px solid #000; color: #fff; background-position: 50% -59px; }
 
+#nav-extra-docs { font-size: 23px; text-shadow: 1px 1px 0 rgba(192,39,0,1); }
+#nav-extra-docs a { color: #fff; }
+
 /*** @Search *********/
 #site-search { width: 235px; float: right; }
 #site-search p { margin: 0; }
-#site-search #q { width: 150px; padding: 4px 8px; margin-right: 8px; border: 1px solid #7d0d0f; background: #630a0c; color: #f6e8e5; font-size: .785em; }
-#site-search #q:hover, #site-search #q:focus { border-color: #C02700; background: #7d0d0f; }
+#site-search #q { width: 150px; padding: 4px 8px; margin-right: 8px; border: 1px solid #7d0d0f; background: #000; color: #f6e8e5; font-size: .785em; }
+#site-search #q:hover, #site-search #q:focus { border-color: #9c0d10; background: #320506; }
 #site-search button { padding: 2px 8px; display: inline-block; background: #630a0c; color: #ccc; font: 200 1em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; border: 0; -moz-border-radius: .25em; -webkit-border-radius: .25em; -border-radius: .25em; }
 #site-search button:hover, #site-search button:focus { background: #7d0d0f; color: #fff; cursor: pointer; }
 #site-search-gg { font-size: .642em; float: right; margin-top: 3px; opacity: .75; }
@@ -318,7 +321,7 @@ body.section-labs #nav-extra-labs a:active,
 
 #home-highlights #glossary { background: transparent; }
 #home-highlights #glossary li { background-image: none; padding: 0; }
-#home-highlights #glossary h4 { padding: 8px 18px .1em 60px; position: relative; font: 200 2em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+#home-highlights #glossary h4 { padding: 8px 18px .1em 60px; margin-left: -18px; position: relative; font: 200 2em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
 #home-highlights #glossary h4 img { position: absolute; left: 0; top: 0; }
 #home-highlights #glossary h4 a { font-weight: normal; }
 #home-highlights #glossary ul li { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
@@ -531,14 +534,15 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
 }
 #content #glossary ul li, #content #glossary ul li:nth-child(even) { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
 
+#other-sections:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
 #other-sections header { margin: 0 0 1em; }
 #other-sections header h3 { margin: 0 0 .15em; font-size: 1em; }
 #other-sections header p { margin: 0 0 .15em; font: bold italic .785em/1.1 Georgia, Times, "Times New Roman", serif; color: #666; }
 #other-sections .boxed { padding: 0 0 0 1px; }
-#other-sections .section { width: 27%; font-size: .785em; border-left: 1px solid #d8d4ca; border-right: 1px solid #d8d4ca; padding: 18px 3%; float: left; margin-left: -1px; }
+#other-sections .section { width: 27%; font-size: .785em; border-left: 1px solid #d8d4ca; border-right: 1px solid #d8d4ca; padding: 18px 2.9%; float: left; margin-left: -1px; }
 #other-sections .section:first-child { border-left: 0; }
 #other-sections .section:last-child { border-right: 0; }
-#other-sections .section h4 { padding: 8px 0 .1em 60px; position: relative; margin: -18px -20px 1em; font: 200 2em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+#other-sections .section h4 { padding: 8px 0 .1em 60px; position: relative; margin: -18px -18px 1em; font: 200 2em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
 #other-sections .section h4 img { position: absolute; left: 0; top: 0; }
 #other-sections .section ul { border-bottom: 1px dotted #d8d4ca; }
 #other-sections .section ul li { margin-bottom: 1em; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; }
@@ -580,7 +584,7 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
 #fave-tools .tools li.all { width: auto; float: none; clear: both; padding: .5em 18px; background: #ebebe4; font-size: .785em; text-transform: uppercase; font-style: italic; font-weight: bold; }
 
 /* @Search @Results *********/
-#google-branding { font-size: .785em; float: right; margin-top: -3.75em; }
+#google-branding { font-size: .785em; float: right; margin-top: -3.75em; opacity: .3; }
 #google-branding .gsc-branding-text { vertical-align: top; padding-right: 2px; }
 
 #search-results .gs-result { margin: 0 0 1.2em; padding: 0 2px 1.2em; border-bottom: 1px dotted #d8d4ca; }
