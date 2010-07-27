@@ -8,7 +8,7 @@
       {% endif %}
       <h4 class="entry-title"><a href="{{ e.link }}" rel="bookmark">{{ e.title|entity_decode }}</a></h4>
       <p class="entry-summary">{{ e.summary|strip_tags|entity_decode|truncatewords(50) }}</p>
-      <p class="entry-meta">Written by <cite class="author vcard">{{ e.author }}</a></cite> on <abbr class="updated" title="{{ entry.last_published|datetime('%Y-%m-%d')}}">{{ entry.last_published|datetime }}</abbr></p>
+      <p class="entry-meta">Written by <cite class="author vcard">{{ e.author }}</cite> on <abbr class="updated" title="{{ entry.last_published|datetime('%Y-%m-%d')}}">{{ entry.last_published|datetime }}</abbr></p>
     </li>
     {% endwith %}
   {% endfor %}
