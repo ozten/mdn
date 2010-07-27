@@ -5,7 +5,7 @@ $(document).ready(function() {
     $('input[placeholder]').placeholder();
 
     // replace no-JS search with our built-in one
-    var search = $('#site-search');
+    var search = $('#site-search,#doc-search');
     search.attr('action', search.attr('data-url'))
           .removeAttr('data-url')
           .children('input[name=sitesearch]').remove();

@@ -10,7 +10,8 @@
 <section id="content">
 <div class="wrap sidebar">
   <section id="content-main" role="main">
-    <form id="doc-search" method="get" action="{{ url('search') }}">
+    <form id="doc-search" method="get" action="http://www.google.com/search"
+          data-url="{{ url('search') }}">
     <div>
       <p>
         {# TODO was: name=q-docs #}
@@ -22,11 +23,9 @@
           <option>Option</option>
         </select>
         #}
-        <button type="submit" name="sa">Search</button>{# TODO name=sa is for Google only #}
-        <input type="hidden" name="cx" value="000660177746123454212:ok9qipjrhpa" />
-        <input type="hidden" name="cof" value="FORID:9" />
-        <input type="hidden" name="ie" value="UTF-8" />
+        <button type="submit">Search</button>{# TODO name=sa is for Google only #}
       </p>
+      <input type="hidden" name="sitesearch" value="developer.mozilla.org" />
     </div>
     <script type="text/javascript" src="//www.google.com/cse/brand?form=cse-search-box&lang=en"></script>
     </form>
