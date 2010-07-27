@@ -321,9 +321,8 @@ body.section-labs #nav-extra-labs a:active,
 
 #home-highlights #glossary { background: transparent; }
 #home-highlights #glossary li { background-image: none; padding: 0; }
-#home-highlights #glossary h4 { padding: 8px 18px .1em 60px; margin-left: -18px; position: relative; font: 200 2em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
-#home-highlights #glossary h4 img { position: absolute; left: 0; top: 0; }
-#home-highlights #glossary h4 a { font-weight: normal; }
+#home-highlights h4.gloss-title { padding: 8px 18px .1em 60px; position: relative; font: 200 1.571em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+#home-highlights h4.gloss-title img { position: absolute; left: 0; top: 0; }
 #home-highlights #glossary ul li { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
 #home-highlights #other-sections { margin-top: 2em; }
 #home-highlights #other-sections .section { padding-bottom: 0; }
