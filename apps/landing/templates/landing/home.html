@@ -32,24 +32,31 @@
         <img src="{{ MEDIA_URL }}img/features/feature-html5.jpg" alt="" width="660">
         <div class="slide-desc">
           <h2>HTML5</h2>
-          <p>See what Mozilla is doing to stay ahead of the competition when it comes to open Web innovation.</p>
-          <p class="more"><a href="#" class="button">More</a></p>
+          <p>Mozilla continues to lead the charge in the adoption of HTML5 and other evolving open Web technologies.
+          Find out more about the <a href="/HTML/HTML5">HTML5 spec</a> and the latest enhancements in HTML5, CSS3
+          and other <a href="/Firefox_4_for_developers">developer features for Firefox 4</a>.</p>
+          <p class="more"><a href="/HTML/HTML5" class="button">More</a></p>
         </div>
       </li>
       <li id="slide-two" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-firefox4b.jpg" alt="" width="660">
         <div class="slide-desc">
           <h2>Firefox 4 Beta</h2>
-          <p>Help us test the latest version of Firefox and help us make it the best browser for the open Web.</p>
-          <p class="more"><a href="#" class="button">More</a></p>
+          <p>Test the <a href="https://www.mozilla.com/en-US/firefox/beta/features/">next version of Firefox</a>
+          and help us make the world’s best browser even better. Firefox 4 advances the modern web and we have a
+          <a href="https://www.mozilla.com/firefox/beta/technology/big">chart full of check marks</a> to prove it.</p>
+          <p class="more"><a href="https://www.mozilla.com/firefox/beta/" class="button">More</a></p>
         </div>
       </li>
       <li id="slide-three" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-addonsbuilder.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h2>Addons Builder</h2>
-          <p>Lorem ipsum dolor sit amet and some other filler text here. This blurb has yet to be written.</p>
-          <p class="more"><a href="#" class="button">More</a></p>
+          <h2>Addons Builder Preview</h2>
+          <p>Use Add-ons Builder to quickly and easily develop an extension for Firefox using common web
+          technologies. There is a <a href="https://builder.mozillalabs.com/tutorial/">tutorial</a> to
+          get you started and a <a href="https://builder.mozillalabs.com/api/jetpack-core/">variety of 
+            APIs in the core library</a> to add functionality to Firefox.</p>
+          <p class="more"><a href="https://builder.mozillalabs.com/" class="button">More</a></p>
         </div>
       </li>
     </ol>
@@ -60,7 +67,10 @@
 
       <div class="tabbed">
         <h3>Docs</h3>
-        <h4 class="gloss-title"><img src="{{ MEDIA_URL }}img/icn-web-sm.png" alt="" width="44" height="44" /> Technology Glossary for <a href="{{ url('web') }}" class="web">Web</a> Developers</h4>
+        <h4 class="gloss-title">
+          <a href="{{ url('web') }}"><img src="{{ MEDIA_URL }}img/icn-web-sm.png" alt="" width="44" height="44" /></a> 
+          Technology Glossary for <a href="{{ url('web') }}" class="web">Web</a> Developers
+        </h4>
         {% include "docs/glossary.html" %}
 
         <section id="other-sections">
