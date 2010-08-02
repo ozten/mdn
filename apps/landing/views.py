@@ -58,7 +58,7 @@ def common_landing(request, section=None, extra=None):
         raise NotImplementedError
 
     updates = Bundle.objects.recent_entries(section.updates)[:5]
-    tweets = Bundle.objects.recent_entries(section.twitter)[:5]
+    tweets = Bundle.objects.recent_entries(section.twitter)[:8]
 
     data = {'updates': updates, 'tweets': tweets}
     if extra:
