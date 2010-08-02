@@ -7,6 +7,7 @@ from django.conf import settings
 from django.template import defaultfilters
 from django.utils.html import strip_tags
 
+from bleach import Bleach
 from jingo import register
 import jinja2
 import pytz
@@ -20,8 +21,10 @@ register.filter(strip_tags)
 register.filter(defaultfilters.timesince)
 register.filter(defaultfilters.truncatewords)
 
-
 register.filter(utils.entity_decode)
+
+
+bleach = Bleach()
 
 
 @register.function
@@ -82,3 +85,9 @@ def _urlencode(items):
         return urllib.urlencode(items)
     except UnicodeEncodeError:
         return urllib.urlencode([(k, smart_str(v)) for k, v in items])
+
+
+@register.filter
+def cleank(txt):
+    """Clean and link some user-supplied text."""
+    return jinja2.Markup(bleach.linkify(bleach.clean(txt)))
