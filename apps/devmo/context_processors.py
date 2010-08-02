@@ -14,7 +14,7 @@ def phpbb_logged_in(request):
     """Detect PHPBB login cookie."""
     return {
         'PHPBB_LOGGED_IN': (request.COOKIES.get(
-            '%s_u' % settings.PHPBB_COOKIE_PREFIX, 1) != 1),
+            '%s_u' % settings.PHPBB_COOKIE_PREFIX, '1') != '1'),
         'PHPBB_SID': request.COOKIES.get(
             '%s_sid' % settings.PHPBB_COOKIE_PREFIX),
     }
