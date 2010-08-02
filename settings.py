@@ -119,6 +119,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.csrf',
 
     'devmo.context_processors.i18n',
+    'devmo.context_processors.phpbb_logged_in',
     'jingo_minify.helpers.build_ids',
 )
 
@@ -217,3 +218,6 @@ MDC_PAGES_DIR = path('lib/mdc_pages')
 
 # Feed fetcher config
 FEEDER_TIMEOUT = 6 # in seconds
+
+# Cookie prefix from PHPBB settings.
+PHPBB_COOKIE_PREFIX = 'phpbb3_jzxvr'

@@ -44,7 +44,11 @@
       </div>
 
       <div id="utility">
-        <p class="user-state"><a href="#">Log in</a> | <a href="#">Become an MDN member</a></p>
+        {% if not PHPBB_LOGGED_IN %}
+        <p class="user-state"><a href="/forums/ucp.php?mode=login">Log in</a> | <a href="/Special:UserRegistration">Become an MDN member</a></p>
+        {% else %}
+        <p class="user-state"><a href="/forums/ucp.php">Welcome back</a> | <a href="/forums/ucp.php?mode=logout&amp;sid={{ PHPBB_SID }}">Log out</a></p>
+        {% endif %}
         <form id="site-search" method="get" action="http://www.google.com/search"
               data-url="{{ url('search') }}">
           <p>
