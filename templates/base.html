@@ -44,11 +44,8 @@
       </div>
 
       <div id="utility">
-        {% if not PHPBB_LOGGED_IN %}
-        <p class="user-state"><a href="/forums/ucp.php?mode=login">Log in</a> | <a href="/Special:UserRegistration">Become an MDN member</a></p>
-        {% else %}
-        <p class="user-state"><a href="/forums/ucp.php">Welcome back</a> | <a href="/forums/ucp.php?mode=logout&amp;sid={{ PHPBB_SID }}">Log out</a></p>
-        {% endif %}
+        {% include "includes/login.html" %}
+
         <form id="site-search" method="get" action="http://www.google.com/search"
               data-url="{{ url('search') }}">
           <p>
@@ -96,9 +93,11 @@
     <div id="legal">
       <img src="{{ MEDIA_URL }}img/mdn-logo-tiny.png" alt="" width="42" height="48">
       <p id="copyright">&copy; {{ thisyear() }} Mozilla Developer Network</p>
-      <p>Content is available under <a href="#">these licenses</a> &bull; <a href="#">About MDN</a> &bull; <a href="#">Help</a></p>
+      <p>Content is available under <a href="/Project:Copyrights">these licenses</a> &bull;
+      <a href="/Project:en/About">About MDN</a> &bull;
+      <a href="/forums/viewtopic.php?f=3&t=5">Help</a></p>
     </div>
-    <p class="user-state"><a href="#">Log in</a> | <a href="#">Become an MDN member</a></p>
+    {% include "includes/login.html" %}
 </div>
 </footer>
 
