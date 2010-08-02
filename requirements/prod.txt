@@ -9,6 +9,7 @@ Django==1.2.1
 -e git://github.com/jbalogh/jingo.git#egg=jingo
 -e git://github.com/jsocol/jingo-minify.git#egg=jingo-minify
 GitPython==0.1.7
+-e git://github.com/jsocol/bleach.git#egg=bleach
 
 # Caching.
 python-memcached==1.45
