@@ -91,3 +91,9 @@ def _urlencode(items):
 def cleank(txt):
     """Clean and link some user-supplied text."""
     return jinja2.Markup(bleach.linkify(bleach.clean(txt)))
+
+
+@register.function
+def devmo_url(path):
+    """Create a URL pointing to devmo."""
+    return 'https://developer.mozilla.org/%s' % path.lstrip('/')
