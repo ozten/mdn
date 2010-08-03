@@ -154,6 +154,7 @@ MINIFY_BUNDLES = {
             'js/jquery-1.4.2.min.js',
             'js/init.js',
             'js/gsearch.js',
+            'js/webtrends.js',
 
             # Home Page
             # cycle and slideshow only needed on the home page (or any page
