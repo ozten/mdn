@@ -31,8 +31,7 @@
     </form>
 
     <section class="section-intro boxed">
-      <header class="head">
-        <img src="{{ MEDIA_URL }}img/icn-web-med.png" alt="" width="58" height="58" />
+      <header class="head section-web">
         <h2>Popular Topics for <span class="web">Web</span> Developers</h2>
       </header>
       <ul id="doc-topics">
@@ -78,7 +77,7 @@
       </header>
       <div class="boxed">
         <div class="section">
-          <h4><a href="{{ url('mobile') }}" class="mobile"><img src="{{ MEDIA_URL }}img/icn-mobile-sm.png" alt="" width="44" height="44" /> Mobile</a></h4>
+          <h4><a href="{{ url('mobile') }}" class="mobile">Mobile</a></h4>
           <ul>
             <li><a href="{{ devmo_url('/en/Mobile') }}">Firefox Mobile for developers</a></li>
             <li><a href="{{ devmo_url('/en/Detecting_device_orientation') }}">Detecting device orientation</a></li>
@@ -86,7 +85,7 @@
           </ul>
         </div>
         <div class="section">
-          <h4><a href="{{ url('addons') }}" class="addons"><img src="{{ MEDIA_URL }}img/icn-addons-sm.png" alt="" width="44" height="44" /> Add-ons</a></h4>
+          <h4><a href="{{ url('addons') }}" class="addons">Add-ons</a></h4>
           <ul>
             <li><a href="https://addons.mozilla.org/en-US/developers/">AMO Developer Hub</a></li>
             <li><a href="{{ devmo_url('/en/Extensions') }}">Extensions</a></li>
@@ -97,7 +96,7 @@
           </ul>
         </div>
         <div class="section">
-          <h4><a href="{{ url('apps') }}" class="apps"><img src="{{ MEDIA_URL }}img/icn-apps-sm.png" alt="" width="44" height="44" /> Applications</a></h4>
+          <h4><a href="{{ url('apps') }}" class="apps">Applications</a></h4>
           <ul>
             <li><a href="{{ devmo_url('/en/Participating_in_the_Mozilla_project') }}">Participating in the Mozilla project</a></li>
             <li><a href="{{ devmo_url('/en/Using_Mozilla_code_in_other_projects') }}">Using Mozilla code in other projects</a></li>
