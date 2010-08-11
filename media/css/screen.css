@@ -35,8 +35,8 @@ Font sizes -
 /* @Fonts *********/
 @font-face {
 	font-family: "League Gothic";
-	src: url("fonts/League_Gothic-webfont.eot");
-	src: local("LeagueGothicRegular"), 
+ 	src: url("fonts/League_Gothic-webfont.eot");
+ 	src: local("LeagueGothicRegular"),
 	     url("fonts/League_Gothic-webfont.woff") format("woff"), 
 	     url("fonts/League_Gothic-webfont.ttf") format("truetype"), 
 	     url("fonts/League_Gothic-webfont.svg#webfont") format("svg");
@@ -152,7 +152,7 @@ body.section-labs #masthead { border-bottom-color: #f8d575; }
 
 .major #branding { padding-left: 130px; width: 530px; }
 #branding { position: relative; float: left; width: 595px; min-height: 70px; padding-left: 75px; }
-#logo { font: normal 46px/1 "League Gothic", Haettenschweiler, Impact, sans-serif; text-transform: uppercase; color: #fff; letter-spacing: 1px; margin: 0; }
+#logo { font: normal 46px/40px "League Gothic", Haettenschweiler, Impact, sans-serif; text-transform: uppercase; color: #fff; letter-spacing: 1px; margin: 0; }
 #logo a { color: #fff; text-decoration: none; }
 .major #logo img { top: -17px; left: -8px; }
 #logo img { position: absolute; left: 0; top: -4px; }
@@ -517,9 +517,9 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
 #doc-search #doc-filter { width: 140px; margin-right: 8px; }
 
 #docs #doc-topics { list-style: none; margin: 0 0 1.5em; font-size: .857em; overflow: hidden; border-bottom: 1px solid #dbd8cd; }
-#docs #doc-topics li { float: left; margin: 0; position: relative; background-image: none; padding: 0 0 1em; }
-#docs #doc-topics li:nth-child(even) { width: 285px; border-left: 1px solid #dbd8cd; margin-left: -1px; padding-left: 25px; }
-#docs #doc-topics li:nth-child(odd) { width: 285px; border-right: 1px solid #dbd8cd; clear: left; padding-right: 25px; }
+#docs #doc-topics li { float: left; width: 285px; margin: 0; position: relative; background-image: none; padding: 0 0 1em; }
+#docs #doc-topics li:nth-child(even) { border-left: 1px solid #dbd8cd; margin-left: -1px; padding-left: 25px; }
+#docs #doc-topics li:nth-child(odd) { border-right: 1px solid #dbd8cd; clear: left; padding-right: 25px; }
 #docs #doc-topics h3 { margin: 0 0 .25em; }
 #docs #doc-topics img { float: left; margin-left: -70px; -moz-box-shadow: 1px 1px 0 #cbcbcb; -webkit-box-shadow: 1px 1px 0 #cbcbcb; -box-shadow: 1px 1px 0 #cbcbcb; }
 
@@ -534,7 +534,8 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
   -webkit-column-count: 4; -webkit-column-gap: 10px;
   column-count: 4; column-gap: 10px;
 }
-#content #glossary ul li, #content #glossary ul li:nth-child(even) { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
+#content #glossary ul li { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
+#content #glossary ul li:nth-child(even) { width: 90%; display: inline-table; margin: 0 10px .5em 0; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; border: 0; }
 
 #other-sections:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
 #other-sections header { margin: 0 0 1em; }
