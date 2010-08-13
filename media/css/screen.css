@@ -356,18 +356,18 @@ body.section-labs #nav-extra-labs a:active,
 .mdn-section h5 { margin: 0 0 .15em; }
 
 /* @Tabbed boxes *********/
-.tabbed-on { border: 1px solid #aba9a5; padding-top: 3em; position: relative; }
-.tabbed-on ul.tab-list { position: absolute; top: 0; left: 0; border-bottom: 1px solid #aba9a5; background: rgba(0,0,0,.04) url("../img/light-shade.png") 0 1.5em repeat-x; }
-ul.tab-list { width: 100%; height: 3em; list-style: none; margin: 0; }
-#content-main ul.tab-list li { border: 1px solid #aba9a5; border-bottom: 0; cursor: pointer; float: left; margin-right: -1px; text-align: center; color: #4e4f52; background: #eeec92 url("../img/light-shade.png") 0 1.25em repeat-x; padding: 15px 20px 10px; min-width: 80px; font: 200 1.2em/1 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
-#content-main ul.tab-list li:hover { background: #fffd9f none; }
-#content-main ul.tab-list li.active-tab { background: #fbfbfa none; color: #333; border-bottom: 1px solid #fff; padding-bottom: 11px; }
-#content-main .tabbed-on ul.tab-list li { border-width: 0 1px 0 0; margin-right: 0; }
+.tabbed-on { border: 1px solid #aba9a5; padding-top: 3.1em; position: relative; }
+.tabbed-on ul.index { position: absolute; top: 0; left: 0; border-bottom: 1px solid #aba9a5; background: rgba(0,0,0,.04) url("../img/light-shade.png") 0 1.5em repeat-x; }
+ul.index { width: 100%; height: 3em; list-style: none; margin: 0; }
+#content-main ul.index li { border: 1px solid #aba9a5; border-bottom: 0; cursor: pointer; float: left; margin-right: -1px; text-align: center; color: #4e4f52; background: #eeec92 url("../img/light-shade.png") 0 1.25em repeat-x; padding: 15px 20px 10px; min-width: 80px; font: 200 1.2em/1 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+#content-main ul.index li:hover { background: #fffd9f none; }
+#content-main ul.index li.active { background: #fbfbfa none; color: #333; border-bottom: 1px solid #fff; padding-bottom: 11px; }
+#content-main .tabbed-on ul.index li { border-width: 0 1px 0 0; margin-right: 0; }
 .tabbed-on .hidden, .folder { position: absolute; left: -999em; height: 0; overflow: hidden; }
 .folder:after { content: "."; clear: both; display: block; height: 0; visibility: hidden; }
 .folder.visible { position: relative; left: 0; background: #fbfbfa; padding: 20px; height: auto; overflow: visible; }
-ul.tab-list a { color: #2f2f2f; text-decoration: none; }
-ul.tab-list a:hover, ul.tab-list a:focus, ul.tab-list a:active { color: #2f2f2f; text-decoration: none; }
+ul.index a { color: #2f2f2f; text-decoration: none; }
+ul.index a:hover, ul.index a:focus, ul.index a:active { color: #2f2f2f; text-decoration: none; }
 
 /* @Sidebar *********/
 #content-sub .module { background: #fff; border-bottom: 3px solid #cecabc; padding: 18px; margin: 0 0 22px; }
