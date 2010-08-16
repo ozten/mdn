@@ -5,7 +5,8 @@ Created by Craig Cook - focalcurve.com
 -----------------------------------------------------------------------------*/
 
 .wrap, #nav, .type, #sections { zoom: 1; } /* I can hasLayout */
-#nav-main li, #nav-extra li { display: inline-block; }
+#nav { margin-bottom: -3px; }
+#nav-main li, #nav-extra li { display: inline; }
 #site-search button { padding: 3px 3px; }
 .module .gallery li { display: inline; }
 #content-sub .heat-graph a b { margin-top: -1.25em; }
