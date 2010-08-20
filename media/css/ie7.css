@@ -4,7 +4,7 @@ Created by Craig Cook - focalcurve.com
         on 27 June, 2010
 -----------------------------------------------------------------------------*/
 
-.wrap, #nav, .type, #sections, .folder.visible { zoom: 1; } /* I can hasLayout */
+.wrap, #nav, .type, #sections, #footbar, .folder.visible { zoom: 1; } /* I can hasLayout */
 #nav { margin-bottom: -3px; }
 #nav-main li, #nav-extra li { display: inline; }
 #site-search button { padding: 3px 3px; }
