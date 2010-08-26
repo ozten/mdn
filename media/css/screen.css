@@ -214,7 +214,8 @@ body.section-labs #nav-extra-labs a:active,
 #nav-extra .current a:hover, #nav-extra .current a:focus, #nav-extra .current a:active { padding-bottom: 8px; border-bottom: 1px solid #000; color: #fff; background-position: 50% -58px; }
 
 #nav-extra-docs { font-size: 23px; }
-#nav-extra #nav-extra-docs a { padding-top: 0; color: #fff; }
+#nav-extra-docs a:link, #nav-extra-docs a:visited { padding-top: 0; color: #fff; }
+#nav-extra-docs a:hover, #nav-extra-docs a:focus, #nav-extra-docs a:active { color: #f8d575; }
 
 /*** @Search *********/
 #site-search { width: 235px; float: right; }
