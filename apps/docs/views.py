@@ -8,6 +8,7 @@ from caching.base import cached
 import commonware
 from dateutil.parser import parse as date_parse
 import jingo
+from tower import ugettext as _
 
 from feeder.models import Entry
 
@@ -27,10 +28,13 @@ def docs(request):
         parsed = entry.parsed
         if not parsed.title.lower().startswith('en/'):
             continue
+        # L10n: "multiple" refers to more than one author.
+        authorname = (parsed.author if not parsed.author == '(multiple)' else
+                      _('(multiple)'))
         active_docs.append({
             'title': parsed.title[3:].replace('_', ' '),
             'link': parsed.link,
-            'author': parsed.author
+            'author': authorname
         })
         if len(active_docs) == 5:
             break

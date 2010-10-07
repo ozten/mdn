@@ -1,7 +1,7 @@
 {% if not PHPBB_LOGGED_IN %}
-  <p class="user-state"><a href="/forums/ucp.php?mode=login">Log in</a> |
-    <a href="{{ devmo_url('/Special:UserRegistration') }}">Become an MDN member</a></p>
+  <p class="user-state"><a href="/forums/ucp.php?mode=login">{{ _('Log in') }}</a> |
+  <a href="{{ devmo_url('/Special:UserRegistration') }}">{{ _('Become an MDN member') }}</a></p>
 {% else %}
-  <p class="user-state"><a href="/forums/ucp.php">Welcome back</a> |
-    <a href="/forums/ucp.php?mode=logout&amp;sid={{ PHPBB_SID }}">Log out</a></p>
+  <p class="user-state"><a href="/forums/ucp.php">{{ _('Welcome back') }}</a> |
+  <a href="/forums/ucp.php?mode=logout&amp;sid={{ PHPBB_SID }}">{{ _('Log out') }}</a></p>
 {% endif %}

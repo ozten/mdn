@@ -9,17 +9,17 @@
 {% block content %}
 <header id="section-head">
 <div class="wrap">
-    <p class="intro">Welcome to the Mobile Developer Community:</p>
-    <h1 id="logo-mobile" class="mobile">Mobile</h1>
+  <p class="intro">{{ _('Welcome to the Mobile Developer Community:') }}</p>
+  <h1 id="logo-mobile" class="mobile">{{ _('Mobile') }}</h1>
 
-    <div class="util">
-      <p><strong>You took back the Web. Now take it with you.</strong></p>
-      <ul>
-        <li class="util-twitter"><a href="http://twitter.com/mozmobile">Twitter</a></li>
-        <li class="util-rss"><a href="http://planet.firefox.com/mobile/">Subscribe</a></li>
-        <li class="util-discuss"><a href="http://mobile.support.mozilla.com/tiki-view_forum.php?locale=en-US&forumId=5">Join the Mobile discussions!</a></li>
-      </ul>
-    </div>
+  <div class="util">
+    <p><strong>{{ _('You took back the Web. Now take it with you.') }}</strong></p>
+    <ul>
+      <li class="util-twitter"><a href="http://twitter.com/mozmobile">{{ _('Twitter') }}</a></li>
+      <li class="util-rss"><a href="http://planet.firefox.com/mobile/">{{ _('Subscribe') }}</a></li>
+      <li class="util-discuss"><a href="http://mobile.support.mozilla.com/tiki-view_forum.php?locale=en-US&forumId=5">{{ _('Join the Mobile discussions!') }}</a></li>
+    </ul>
+  </div>
 </div>
 </header>
 
@@ -30,80 +30,99 @@
     <section class="boxed">
       <div id="popular-docs">
         <header class="head section-mobile">
-          <h2>Popular <span class="mobile">Mobile</span> Documentation</h2>
+          {# L10n: Please escape HTML entities here, like &amp; #}
+          <h2>{{ _('Popular <span class="mobile">Mobile</span> Documentation')|safe }}</h2>
         </header>
 
         <ul class="hfeed">
           <li class="hentry">
-            <h4 class="entry-title"><a href="https://wiki.mozilla.org/mobile">Mobile Wiki</a></h4>
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/mobile">{{ _('Mobile Wiki') }}</a></h4>
             <p class="entry-summary">
+            {% trans %}
             Get the latest news, status and developer documentation on the Mozilla mobile
             project. Check out the mobile project's goals, and how you can help out and get
             involved!
+            {% endtrans %}
             </p>
           </li>
           <li class="hentry">
-            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Build Great Mobile Add-ons</a></h4>
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">{{ _('Build Great Mobile Add-ons') }}</a></h4>
             <p class="entry-summary">
-            Firefox is the world's first Web browser to support mobile add-ons.
-            Learn about <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions">Extension Basics</a>,
-            <a href="https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices">Extension Best Practices</a>,
-            helpful <a href="https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets">Code Snippets</a>, and more
-            so you can build innovative add-ons for Firefox on Android and Firefox on Nokia's Meego platform.
+            {% trans basics_url='https://wiki.mozilla.org/Mobile/Fennec/Extensions',
+                     best_practices_url='https://wiki.mozilla.org/Mobile/Fennec/Extensions/BestPractices',
+                     snippets_url='https://wiki.mozilla.org/Mobile/Fennec/CodeSnippets' %}
+            Firefox is the world's first Web browser to support mobile add-ons. Learn about
+            <a href="{{ basics_url }}">Extension Basics</a>, <a href="{{ best_practices_url
+            }}">Extension Best Practices</a>, helpful <a href="{{ snippets_url }}">Code
+            Snippets</a>, and more so you can build innovative add-ons for Firefox on Android
+            and Firefox on Nokia's Meego platform.
+            {% endtrans %}
             </p>
           </li>
           <li class="hentry">
-            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">Location-Aware Applications</a></h4>
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile/DeviceAPIs">{{ _('Location-Aware Applications') }}</a></h4>
             <p class="entry-summary">
-            Learn how to use the <a href="{{ devmo_url('/En/Using_geolocation') }}">Geolocation API</a>
-            and put people on the right path. Location-Aware Browsing is a must when you're out and
-            about on your mobile. Learn how to build innovative apps that delight your audience.
+            {% trans geo_url=devmo_url('/En/Using_geolocation') %}
+            Learn how to use the <a href="{{ geo_url }}">Geolocation API</a> and put people on the
+            right path. Location-Aware Browsing is a must when you're out and about on your mobile.
+            Learn how to build innovative apps that delight your audience.
+            {% endtrans %}
             </p>
           </li>
           <li class="hentry">
-            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile#Get_Involved">Help build Firefox for Mobile</a></h4>
+            <h4 class="entry-title"><a href="https://wiki.mozilla.org/Mobile#Get_Involved">{{ _('Help build Firefox for Mobile') }}</a></h4>
             <p class="entry-summary">
-            Your help is vital to the success of Firefox. Provide feedback on our
-            <a href="irc://irc.mozilla.org/#mobile">IRC channel</a>,
-            <a href="https://wiki.mozilla.org/Mobile#Weekly_Meetings">join
-              our Wednesday development meeting</a>, or even
-            <a href="https://bugzilla.mozilla.org/">file some bugs</a>.
+            {% trans irc_url='irc://irc.mozilla.org/#mobile', meeting_url='https://wiki.mozilla.org/Mobile#Weekly_Meetings',
+                     bugzilla_url='https://bugzilla.mozilla.org/' %}
+            Your help is vital to the success of Firefox. Provide feedback on our <a href="{{
+            irc_url }}">IRC channel</a>, <a href="{{ meeting_url }}">join our Wednesday development
+            meeting</a>, or even <a href="{{ bugzilla_url }}">file some bugs</a>.
+            {% endtrans %}
             </p>
           </li>
         </ul>
-        <p class="all"><a href="{{ devmo_url('/En/Mobile') }}" class="go">All mobile development documentation</a></p>
+        <p class="all"><a href="{{ devmo_url('/En/Mobile') }}" class="go">{{ _('All mobile development documentation') }}</a></p>
 
         <header class="subhead">
-          <h2>Favorite <span class="mobile">Mobile</span> Articles</h2>
+          {# L10n: Please escape HTML entities here, like &amp; #}
+          <h2>{{ _('Favorite <span class="mobile">Mobile</span> Articles')|safe }}</h2>
         </header>
 
         <ul class="hfeed">
           <li class="hentry">
-            <h4 class="entry-title"><a href="http://starkravingfinkle.org/blog/2010/06/fennec-2-0-whats-coming" rel="bookmark">Firefox for mobile: What's coming next</a></h4>
+            <h4 class="entry-title"><a href="http://starkravingfinkle.org/blog/2010/06/fennec-2-0-whats-coming" rel="bookmark">{{ _("Firefox for mobile: What's coming next") }}</a></h4>
             <p class="entry-summary">
+            {% trans %}
             The projects and planning never stops. We're cooking up some amazing new
             features and improvements for our next major release. Check it out and see
             how you can help us continue to make the world's best mobile Web browser.
+            {% endtrans %}
             </p>
           </li>
           <li class="hentry">
-            <h4 class="entry-title"><a href="http://www.readwriteweb.com/start/2010/01/html5-is-great-for-mobile.php" rel="bookmark">“HTML5 is Great for Mobile, Developers Say”</a></h4>
+            <h4 class="entry-title"><a href="http://www.readwriteweb.com/start/2010/01/html5-is-great-for-mobile.php" rel="bookmark">{{ _('"HTML5 is Great for Mobile, Developers Say"') }}</a></h4>
             <p class="entry-summary">
+            {% trans %}
             Hear from other developers about the advantages of HTML5 and developing for
             the mobile Web in this article from ReadWriteWeb:
+            {% endtrans %}
             </p>
-            <p class="entry-summary">
-            <em>“‘Hands down, the developer pool for HTML / JS rock stars is tenfold larger
+            <p class="entry-summary"><em>
+            {% trans %}
+            "'Hands down, the developer pool for HTML / JS rock stars is tenfold larger
             [and] there is no download attrition. You simply point people at a URL and
-            there you go -- it's installed.’ The fact that apps can be directly installed
+            there you go -- it's installed.' The fact that apps can be directly installed
             by URL rather than by waiting for an App Store download means that
-            developers reduce barriers to virality.”</em>
-            </p>
+            developers reduce barriers to virality."
+            {% endtrans %}
+            </em></p>
           </li>
           <li class="hentry">
-            <h4 class="entry-title"><a href="http://developer.android.com/reference/packages.html" rel="bookmark">Android APIs</a></h4>
+            <h4 class="entry-title"><a href="http://developer.android.com/reference/packages.html" rel="bookmark">{{ _('Android APIs') }}</a></h4>
             <p class="entry-summary">
+            {% trans %}
             Access Android APIs on this Android Developer page.
+            {% endtrans %}
             </p>
           </li>
         </ul>
@@ -111,133 +130,23 @@
 
       <div id="recent-news">
         <header class="subhead">
-          <h3>Recent <span class="mobile">Mobile</span> News &amp; Updates</h3>
+          {# L10n: Please escape HTML entities here, like &amp; #}
+          <h3>{{ _('Recent <span class="mobile">Mobile</span> News &amp; Updates')|safe }}</h3>
         </header>
 
         {{ newsfeed(updates) }}
 
-        <p class="all"><a href="http://planet.firefox.com/mobile/" class="go">All mobile development entries</a></p>
+        <p class="all"><a href="http://planet.firefox.com/mobile/" class="go">{{ _('All mobile development entries') }}</a></p>
       </div>
-    </section><!-- /.boxed -->
+    </section>{# /.boxed #}
 
-  </section><!-- /#content-main -->
+  </section>{# /#content-main #}
 
   <aside id="content-sub" role="complementary">
-
     {{ twitter(tweets, title=_('Correspondence on Twitter from the Mobile developer community.')) }}
-
-  {# TODO developer trends etc.
-    <div class="module" id="section-trends">
-      <h3 class="mod-title"><span class="mobile">Mobile</span> Developer Trends</h3>
-      <p class="mod-intro">Up to date trends and popular content based on number of tags on a given entry/doc/tool. Alphabetical order.</p>
-      <ol class="heat-graph">
-        <li><span style="width:50%;"><a href="#">Accessory <b>50</b></a></span></li>
-        <li><span style="width:80%;"><a href="#">Concept <b>80</b></a></span></li>
-        <li><span style="width:100%;"><a href="#">CSS <b>100</b></a></span></li>
-        <li><span style="width:6%;"><a href="#">iPad <b>6</b></a></span></li>
-        <li><span style="width:17%;"><a href="#">iPhone <b>17</b></a></span></li>
-        <li><span style="width:94%;"><a href="#">HTML <b>94</b></a></span></li>
-        <li><span style="width:33%;"><a href="#">Operator <b>33</b></a></span></li>
-        <li><span style="width:24%;"><a href="#">Prism <b>24</b></a></span></li>
-        <li><span style="width:66%;"><a href="#">Property <b>66</b></a></span></li>
-        <li><span style="width:10%;"><a href="#">Prototype <b>10</b></a></span></li>
-      </ol>
-    </div><!-- /trends -->
-
-    <div class="module" id="help">
-      <h3>Help Us.</h3>
-      <p>Help write, edit, review, and translate our documentation:</p>
-      <p><a href="#" class="go">Get started today!</a></p>
-    </div>
-
-    <div class="module" id="active">
-      <h3 class="mod-title">Active <span class="mobile">Mobile</span> Developers</h3>
-      <ol class="gallery">
-        <li><a href="#" title="Leia Organa"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Leia Organa" width="32" height="32" /></a></li>
-        <li><a href="#" title="Han Solo"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Han Solo" width="32" height="32" /></a></li>
-        <li><a href="#" title="Obi-Wan Kenobi"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Obi-Wan Kenobi" width="32" height="32" /></a></li>
-        <li><a href="#" title="Lando Calrissian"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Lando Calrissian" width="32" height="32" /></a></li>
-        <li><a href="#" title="Boba Fett"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Boba Fett" width="32" height="32" /></a></li>
-        <li><a href="#" title="Darth Vader"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Darth Vader" width="32" height="32" /></a></li>
-        <li><a href="#" title="Luke Skywalker"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Luke Skywalker" width="32" height="32" /></a></li>
-        <li><a href="#" title="Yoda"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="Yoda" width="32" height="32" /></a></li>
-      </ol>
-    </div>
-
-    <form class="module" id="contact" method="post" action="#">
-      <h3 class="mod-title">Got some feedback or ideas you want to share?</h3>
-      <p class="mod-intro">Drop us a line and let us know what&#8217;s on your mind.</p>
-      <fieldset>
-        <ol>
-          <li><label for="contact-name">Name</label> <input type="text" id="contact-name" name="name" /></li>
-          <li><label for="contact-email">Email</label> <input type="text" id="contact-email" name="email" /></li>
-          <li><label for="contact-message">Feedback</label> <textarea id="contact-message" name="message" rows="10" cols="20"></textarea></li>
-          <li class="fm-submit"><button type="submit">Submit</button></li>
-        </ol>
-      </fieldset>
-    </form>
-    #}
-
-  </aside><!-- /#content-sub -->
+  </aside>{# /#content-sub #}
 
 </div>
-</section><!-- /#content -->
+</section>{# /#content #}
 
-{# TODO latest forum discussions feed, latest community comments
-<section id="content-latest">
-<div class="wrap">
-
-  <div id="latest-forums" class="boxed">
-    <header>
-      <h3>Latest <span class="mobile">Mobile</span> Discussions from Our Forums:</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </header>
-    <ul class="hfeed">
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Lando Calrissian</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Excepteur sint occaecat cupidatat non proident labore et dolore magna&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Jay Patel</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Han</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Eiusmod tempor incididunt ut labore et dolore magna aliqua in voluptate velit esse cillum&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> morgamic</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Duis aute irure dolor in commodo ipsum reprehenderit in voluptate ipsum dolor sit amet, consectetur adipisicing elit velit esse cillum dolore eu fugiat nulla pariatur&hellip;</a></p>
-      </li>
-    </ul>
-  </div>
-
-  <div id="latest-comments" class="boxed">
-    <header>
-      <h3>Latest <span class="mobile">Mobile</span> Comments from Our Community:</h3>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </header>
-    <ul class="hfeed">
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Jay Patel</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> morgamic</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Lando Calrissian</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Excepteur sint occaecat cupidatat non proident&hellip;</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Han</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Eiusmod tempor incididunt ut labore et dolore magna aliqua in voluptate velit esse cillum&hellip;</a></p>
-      </li>
-    </ul>
-  </div>
-
-</div>
-</section>
-#}
 {% endblock %}

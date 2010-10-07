@@ -39,8 +39,7 @@
         {% block headerlogo %}
         <h4 id="logo"><a href="{{ url('home') }}"><img src="{{ MEDIA_URL }}img/mdn-logo-sm.png" alt="" width="62" height="71"> Mozilla Developer Network</a></h4>
         {% endblock %}
-        <p id="tagline">A comprehensive, usable, and accurate resource for
-        everyone developing for the Open Web.</p>
+        <p id="tagline">{{ _('A comprehensive, usable, and accurate resource for everyone developing for the Open Web.') }}</p>
       </div>
 
       <div id="utility">
@@ -49,8 +48,8 @@
         <form id="site-search" method="get" action="http://www.google.com/search"
               data-url="{{ url('search') }}">
           <p>
-            <input type="text" role="search" placeholder="Search" id="q" name="q" value="{{ query }}" />
-            <button type="submit">Search</button>
+            <input type="text" role="search" placeholder="{{ _('Search') }}" id="q" name="q" value="{{ query }}" />
+            <button type="submit">{{ _('Search') }}</button>
           </p>
           <input type="hidden" name="sitesearch" value="developer.mozilla.org" />
         </form>
@@ -59,17 +58,15 @@
 
       <nav id="nav">
         <ul id="nav-main" role="navigation">
-          <li id="nav-main-web"><a href="{{ url('web') }}" class="web">Web</a></li>
-          <li id="nav-main-mobile"><a href="{{ url('mobile') }}" class="mobile">Mobile</a></li>
-          <li id="nav-main-addons"><a href="{{ url('addons') }}" class="addons">Add-ons</a></li>
-          <li id="nav-main-apps"><a href="{{ url('apps') }}" class="apps">Applications</a></li>
+          <li id="nav-main-web"><a href="{{ url('web') }}" class="web">{{ _('Web') }}</a></li>
+          <li id="nav-main-mobile"><a href="{{ url('mobile') }}" class="mobile">{{ _('Mobile') }}</a></li>
+          <li id="nav-main-addons"><a href="{{ url('addons') }}" class="addons">{{ _('Add-ons') }}</a></li>
+          <li id="nav-main-apps"><a href="{{ url('apps') }}" class="apps">{{ _('Applications') }}</a></li>
         </ul>
 
         <ul id="nav-extra" role="navigation">
-          <li id="nav-extra-docs"><a href="{{ url('docs') }}">Docs</a></li>
-          {#<li id="nav-extra-tools"><a href="#">Tools</a></li>#}
-          <li id="nav-extra-community"><a href="/forums">Community</a></li>
-          {#<li id="nav-extra-labs"><a href="#">Labs</a></li>#}
+          <li id="nav-extra-docs"><a href="{{ url('docs') }}">{{ _('Docs') }}</a></li>
+          <li id="nav-extra-community"><a href="/forums">{{ _('Community') }}</a></li>
         </ul>
       </nav>
     </div>
@@ -82,9 +79,10 @@
 <section id="footbar">
 <div class="wrap">
   <p>
-    What do you think of the new MDN? Please
-    <a href="http://mdn.uservoice.com/forums/51389-mdn-website-feedback-http-developer-mozilla-org">share your feedback</a>
-    with us.
+  {% trans uservoice_url='http://mdn.uservoice.com/forums/51389-mdn-website-feedback-http-developer-mozilla-org' %}
+  What do you think of the new MDN? Please <a href="{{ uservoice_url }}">share
+  your feedback</a> with us.
+  {% endtrans %}
   </p>
 </div>
 </section>
@@ -93,9 +91,12 @@
     <div id="legal">
       <img src="{{ MEDIA_URL }}img/mdn-logo-tiny.png" alt="" width="42" height="48">
       <p id="copyright">&copy; {{ thisyear() }} Mozilla Developer Network</p>
-      <p>Content is available under <a href="{{ devmo_url('/Project:Copyrights') }}">these licenses</a> &bull;
-      <a href="{{ devmo_url('/Project:en/About') }}">About MDN</a> &bull;
-      <a href="/forums/viewtopic.php?f=3&amp;t=5">Help</a></p>
+      <p>
+      {% trans copyright_url=devmo_url('/Project:Copyrights') %}
+      Content is available under <a href="{{ copyright_url }}">these licenses</a>
+      {% endtrans %}
+      &bull; <a href="{{ devmo_url('/Project:en/About') }}">{{ _('About MDN') }}</a> &bull;
+      <a href="/forums/viewtopic.php?f=3&amp;t=5">{{ _('Help') }}</a></p>
     </div>
     {% include "includes/login.html" %}
 </div>
