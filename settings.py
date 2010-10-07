@@ -67,7 +67,7 @@ TIME_ZONE = 'America/Los_Angeles'
 LANGUAGE_CODE = 'en-US'
 
 # Accepted locales
-MDN_LANGUAGES = ('en-US',)
+MDN_LANGUAGES = ('en-US', 'de',)
 
 # Override Django's built-in with our native names
 try:
