@@ -5,15 +5,23 @@
 {% block content %}
 <header id="welcome-bar">
 <div class="wrap">
-    <p class="intro" id="welcome-devmo"><span class="leadin">Welcome to the Mozilla Developer Network, a.k.a.:</span>
-    <strong class="devmo">DEVMO</strong>
-    <a href="http://en.wikipedia.org/wiki/Mozilla_Developer_Center" class="go">Learn the history behind Project <em>Devmo</em></a></p>
+  <p class="intro" id="welcome-devmo"><span class="leadin">
+    {# L10n: a.k.a. stands for 'also known as'. Followed by 'DEVMO'. #}
+    {{ _('Welcome to the Mozilla Developer Network, a.k.a.:') }}</span>
+  <strong class="devmo">
+    {# L10n: DEVMO is the nickname for MDN. #}
+    {{ _('DEVMO') }}
+  </strong>
+  <a href="{{ _('http://en.wikipedia.org/wiki/Mozilla_Developer_Center') }}" class="go">
+    {{ _('Learn the history behind Project <em>Devmo</em>')|safe }}</a></p>
 
-    <p class="extra" id="welcome-new"><strong>New to MDN?</strong> Want to help make our network even better?<br />
-    <a href="/forums/viewtopic.php?f=3&amp;t=5" class="go">Here's how to get started</a></p>
+  <p class="extra" id="welcome-new"><strong>{{ _('New to MDN?') }}</strong>
+    {{ _('Want to help make our network even better?') }}<br />
+    <a href="/forums/viewtopic.php?f=3&amp;t=5" class="go">{{ _("Here's how to get started") }}</a></p>
 
-    <p class="extra" id="welcome-login"><strong>Already a member?</strong> Customize your profile &amp; fine-tune your participation within MDN.<br />
-    <a href="/forums/ucp.php?mode=login" class="go">Log in</a></p>
+  <p class="extra" id="welcome-login"><strong>{{ _('Already a member?') }}</strong>
+    {{ _('Customize your profile &amp; fine-tune your participation within MDN.') }}<br />
+  <a href="/forums/ucp.php?mode=login" class="go">{{ _('Log in') }}</a></p>
 </div>
 </header>
 
@@ -23,336 +31,131 @@
 
   <div id="slideshow">
     <ol id="slide-control">
-      <li id="slide1" class="on"><a href="#slide-one">School of Webcraft</a></li>
-      <li id="slide2"><a href="#slide-two">HTML5</a></li>
-      <li id="slide3"><a href="#slide-three">Firefox 4 Beta</a></li>
-      <li id="slide4"><a href="#slide-four">Addons Builder Preview</a></li>
+      <li id="slide1" class="on"><a href="#slide-one">{{ _('School of Webcraft') }}</a></li>
+      <li id="slide2"><a href="#slide-two">{{ _('HTML5') }}</a></li>
+      <li id="slide3"><a href="#slide-three">{{ _('Firefox 4 Beta') }}</a></li>
+      <li id="slide4"><a href="#slide-four">{{ _('Addons Builder Preview') }}</a></li>
     </ol>
     <ol id="slides">
       <li id="slide-one" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-p2pu.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h2>School of Webcraft</h2>
-          <p>Mozilla and <a href="http://p2pu.org/">P2PU</a> are creating the
-          <a href="http://www.drumbeat.org/p2pu-webcraft">School of Webcraft</a>, a powerful
-          new way to teach and learn web developer skills. Classes are globally accessible,
-          100% free, and powered entirely by learners, mentors and contributors like you
-          people. Our goal: a vibrant, peer-led system that helps people around the world
-          easily access and build careers on open web technology.</p>
-          <p class="more"><a href="http://www.drumbeat.org/p2pu-webcraft" class="button">More</a></p>
+          <h2>{{ _('School of Webcraft') }}</h2>
+          <p>
+          {% trans p2pu='http://p2pu.org/', p2pu_drumbeat='http://www.drumbeat.org/p2pu-webcraft' %}
+          Mozilla and <a href="{{ p2pu }}">P2PU</a> are creating the <a href="{{ p2pu_drumbeat }}">School
+            of Webcraft</a>, a powerful new way to teach and learn web developer skills. Classes
+          are globally accessible, 100% free, and powered entirely by learners, mentors and
+          contributors like you people. Our goal: a vibrant, peer-led system that helps people
+          around the world easily access and build careers on open web technology.
+          {% endtrans %}
+          </p>
+          <p class="more"><a href="http://www.drumbeat.org/p2pu-webcraft" class="button">{{ _('More') }}</a></p>
         </div>
       </li>
       <li id="slide-two" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-html5.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h2>HTML5</h2>
-          <p>Mozilla continues to lead the charge in the adoption of HTML5 and other evolving open Web technologies.
-          Find out more about the <a href="{{ devmo_url('/en/HTML/HTML5') }}">HTML5 spec</a> and the latest enhancements in HTML5, CSS3
-          and other <a href="{{ devmo_url('/en/Firefox_4_for_developers') }}">developer features for Firefox 4</a>.</p>
-          <p class="more"><a href="{{ devmo_url('/en/HTML/HTML5') }}" class="button">More</a></p>
+          <h2>{{ _('HTML5') }}</h2>
+          <p>
+          {% trans devmo_html5=devmo_url('/en/HTML/HTML5'), devmo_fx4dev=devmo_url('/en/Firefox_4_for_developers') %}
+          Mozilla continues to lead the charge in the adoption of HTML5 and other evolving open Web technologies.
+          Find out more about the <a href="{{ devmo_html5 }}">HTML5 spec</a> and the latest enhancements in HTML5, CSS3
+          and other <a href="{{ devmo_fx4dev }}">developer features for Firefox 4</a>.
+          {% endtrans %}
+          </p>
+          <p class="more"><a href="{{ devmo_url('/en/HTML/HTML5') }}" class="button">{{ _('More') }}</a></p>
         </div>
       </li>
       <li id="slide-three" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-firefox4b.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h2>Firefox 4 Beta</h2>
-          <p>Test the <a href="https://www.mozilla.com/en-US/firefox/beta/features/">next version of Firefox</a>
-          and help us make the world’s best browser even better. Firefox 4 advances the modern web and we have a
-          <a href="https://www.mozilla.com/firefox/beta/technology/">big chart full of check marks</a> to prove it.</p>
-          <p class="more"><a href="https://www.mozilla.com/firefox/beta/" class="button">More</a></p>
+          <h2>{{ _('Firefox 4 Beta') }}</h2>
+          <p>
+          {% trans fx4_features='https://www.mozilla.com/en-US/firefox/beta/features/',
+                   fx4_tech='https://www.mozilla.com/firefox/beta/technology/' %}
+          Test the <a href="{{ fx4_features }}">next version of Firefox</a> and help us make the
+          world's best browser even better. Firefox 4 advances the modern web and we have a
+          <a href="{{ fx4_tech }}">big chart full of check marks</a> to prove it.
+          {% endtrans %}
+          </p>
+          <p class="more"><a href="https://www.mozilla.com/firefox/beta/" class="button">{{ _('More') }}</a></p>
         </div>
       </li>
       <li id="slide-four" class="slide">
         <img src="{{ MEDIA_URL }}img/features/feature-addonsbuilder.jpg" alt="" width="660">
         <div class="slide-desc">
-          <h2>Addons Builder Preview</h2>
-          <p>Use Add-ons Builder to quickly and easily develop an extension for Firefox using common web
-          technologies. There is a <a href="https://builder.mozillalabs.com/tutorial/">tutorial</a> to
-          get you started and a <a href="https://builder.mozillalabs.com/api/jetpack-core/">variety of 
-            APIs in the core library</a> to add functionality to Firefox.</p>
-          <p class="more"><a href="https://builder.mozillalabs.com/" class="button">More</a></p>
+          <h2>{{ _('Addons Builder Preview') }}</h2>
+          <p>
+          {% trans tutorial='https://builder.mozillalabs.com/tutorial/',
+                   api='https://builder.mozillalabs.com/api/jetpack-core/' %}
+          Use Add-ons Builder to quickly and easily develop an extension for Firefox using common web
+          technologies. There is a <a href="{{ tutorial }}">tutorial</a> to get you started and a
+          <a href="{{ api }}">variety of APIs in the core library</a> to add functionality to Firefox.
+          {% endtrans %}
+          </p>
+          <p class="more"><a href="https://builder.mozillalabs.com/" class="button">{{ _('More') }}</a></p>
         </div>
       </li>
     </ol>
   </div><!-- /#slideshow -->
 
     <div id="home-highlights">
-      <h2>Highlights From Around the Network</h2>
+      <h2>{{ _('Highlights From Around the Network') }}</h2>
 
       <div class="tabbed">
-        <h3>Docs</h3>
+        <h3>{{ _('Docs') }}</h3>
         <h4 class="gloss-title">
-          Key Topics for <a href="{{ url('web') }}" class="web">Web</a> Developers
+          {% trans web_url=url('web') %}
+          Key Topics for <a href="{{ web_url }}" class="web">Web</a> Developers
+          {% endtrans %}
         </h4>
         {% include "docs/glossary.html" %}
 
         <div id="other-sections">
           <div class="section">
-            <h4><a href="{{ url('mobile') }}" class="mobile">Mobile</a></h4>
-            <p>Learn more about <a href="{{ devmo_url('/en/Mobile') }}">Fennec</a>
-            and mobile-specific technologies like <a href="{{ devmo_url('/En/Using_geolocation') }}">geolocation</a>.</p>
+            <h4><a href="{{ url('mobile') }}" class="mobile">{{ _('Mobile') }}</a></h4>
+            <p>
+            {% trans devmo_mobile=devmo_url('/en/Mobile'), devmo_geo=devmo_url('/En/Using_geolocation') %}
+            Learn more about <a href="{{ devmo_mobile }}">Fennec</a> and mobile-specific technologies
+            like <a href="{{ devmo_geo }}">geolocation</a>.</p>
+            {% endtrans %}
           </div>
           <div class="section">
-            <h4><a href="{{ url('addons') }}" class="addons">Add-ons</a></h4>
-            <p><a href="https://builder.mozillalabs.com/">Build your own add-ons</a> and discuss them
-            with the <a href="https://addons.mozilla.org/en-US/developers/">add-on developer community</a>.</p>
+            <h4><a href="{{ url('addons') }}" class="addons">{{ _('Add-ons') }}</a></h4>
+            <p>
+            {% trans builder_url='https://builder.mozillalabs.com/', dev_url='https://addons.mozilla.org/en-US/developers/' %}
+            <a href="{{ builder_url }}">Build your own add-ons</a> and discuss them with the
+            <a href="{{ dev_url }}">add-on developer community</a>.
+            {% endtrans %}
+            </p>
           </div>
           <div class="section">
-            <h4><a href="{{ url('apps') }}" class="apps">Applications</a></h4>
-            <p>See how you can <a href="{{ devmo_url('/En/Participating_in_the_Mozilla_project') }}">
-              participate</a> in <a href="{{ devmo_url('/en/Localization') }}">localization</a>,
-              <a href="{{ devmo_url('/en/QA') }}">quality assurance</a>, and other Mozilla projects.</p>
+            <h4><a href="{{ url('apps') }}" class="apps">{{ _('Applications') }}</a></h4>
+            <p>
+            {% trans devmo_participate=devmo_url('/En/Participating_in_the_Mozilla_project'),
+                     devmo_l10n=devmo_url('/en/Localization'), devmo_qa=devmo_url('/en/QA') %}
+              See how you can <a href="{{ devmo_participate }}">participate</a> in
+              <a href="{{ devmo_l10n }}">localization</a>, <a href="{{ devmo_qa }}">quality
+                assurance</a>, and other Mozilla projects.
+            {% endtrans %}
+            </p>
           </div>
         </div>
 
-        <h3>News &amp; Updates</h3>
-        <p class="intro">Highlighted Mozilla Developer News &amp; Updates</p>
+        <h3>{{ _('News & Updates') }}</h3>
+        <p class="intro">{{ _('Highlighted Mozilla Developer News & Updates') }}</p>
         {{ newsfeed(updates, section_headers=True) }}
 
-        {#
-        <h3>Events</h3>
-        <p class="intro">MDN Events</p>
-        <p>Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing, commodo quis, gravida id, est. Sed lectus. Praesent elementum hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a ultrices sagittis, mi neque euismod dui, eu pulvinar nunc sapien ornare nisl. Phasellus pede arcu, dapibus eu, fermentum et, dapibus sed, urna.</p>
-
-        <h3>Tools</h3>
-        <p class="intro">Developer Tools</p>
-        <p>Ut convallis, sem sit amet interdum consectetuer, odio augue aliquam leo, nec dapibus tortor nibh sed augue. Integer eu magna sit amet metus fermentum posuere. Morbi sit amet nulla sed dolor elementum imperdiet. Quisque fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque adipiscing eros ut libero. Ut condimentum mi vel tellus. Suspendisse laoreet. Fusce ut est sed dolor gravida convallis. Morbi vitae ante. Vivamus ultrices luctus nunc. Suspendisse et dolor. Etiam dignissim. Proin malesuada adipiscing lacus. Donec metus. Curabitur gravida.</p>
-        #}
       </div>
     </div>
 
   </section>
 
   <aside id="content-sub" role="complementary">
-
     {{ twitter(tweets, title=_('Correspondence on Twitter from around the Mozilla Developer Network.')) }}
-
-  {# TODO trends etc.
-    <div class="module hot" id="hot-content">
-      <h3 class="mod-title">Network Trends &amp; Hot Content</h3>
-      <p class="mod-intro">Up to date trends and popular content based on number of tags on a given entry/doc/tool. Alphabetical order.</p>
-      <ol class="heat-graph">
-        <li><span style="width:50%;"><a href="#">Accessory <b>50</b></a></span></li>
-        <li><span style="width:80%;"><a href="#">Concept <b>80</b></a></span></li>
-        <li><span style="width:100%;"><a href="#">CSS <b>100</b></a></span></li>
-        <li><span style="width:6%;"><a href="#">iPad <b>6</b></a></span></li>
-        <li><span style="width:17%;"><a href="#">iPhone <b>17</b></a></span></li>
-        <li><span style="width:94%;"><a href="#">HTML <b>94</b></a></span></li>
-        <li><span style="width:33%;"><a href="#">Operator <b>33</b></a></span></li>
-        <li><span style="width:24%;"><a href="#">Prism <b>24</b></a></span></li>
-        <li><span style="width:66%;"><a href="#">Property <b>66</b></a></span></li>
-        <li><span style="width:10%;"><a href="#">Prototype <b>10</b></a></span></li>
-      </ol>
-
-      <ul class="hfeed">
-        <li class="hentry">
-          <h5 class="category"><a href="#" rel="tag" class="addons">Add-ons</a></h5>
-          <h4 class="entry-title"><a href="#">Lorem ipsum dolor sit amet</a></h4>
-          <p class="entry-meta">Filed under: <a href="#" rel="tag">Operator</a>, <a href="#" rel="tag">microformats</a></p>
-        </li>
-        <li class="hentry">
-          <h5 class="category"><a href="#" rel="tag" class="mobile">Mobile</a></h5>
-          <h4 class="entry-title"><a href="#">Fusce pellentesque suscipit nibh</a></h4>
-          <p class="entry-meta">Filed under: <a href="#" rel="tag">Fennec</a>, <a href="#">Android</a>, <a href="#" rel="tag">HTML5</a></p>
-        </li>
-      </ul>
-    </div><!-- /hot-content -->
-
-    #}
   </aside>
 </div>
-</section><!-- /#content -->
-
-
-{# TODO latest forum entries etc.
-<section id="content-latest">
-<div class="wrap">
-
-  <div id="latest-forums" class="boxed">
-    <header>
-      <h3>Latest Discussions from Our Forums:</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </header>
-    <ul class="hfeed">
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Lando Calrissian</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Excepteur sint occaecat cupidatat non proident labore et dolore magna&hellip;</a>
-        in <a href="#" rel="tag" class="category mobile">Mobile</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Jay Patel</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque&hellip;</a>
-        in <a href="#" rel="tag" class="category apps">Applications</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Han</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Eiusmod tempor incididunt ut labore et dolore magna aliqua in voluptate velit esse cillum&hellip;</a>
-        in <a href="#" rel="tag" class="category addons">Add-ons</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> morgamic</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Duis aute irure dolor in commodo ipsum reprehenderit in voluptate ipsum dolor sit amet, consectetur adipisicing elit velit esse cillum dolore eu fugiat nulla pariatur&hellip;</a>
-        in <a href="#" rel="tag" class="category web">Web</a></p>
-      </li>
-    </ul>
-  </div>
-
-  <div id="latest-comments" class="boxed">
-    <header>
-      <h3>Latest Comments from Our Community:</h3>
-      <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-    </header>
-    <ul class="hfeed">
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Jay Patel</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi commodo, ipsum sed pharetra gravida, orci magna rhoncus neque&hellip;</a>
-        in <a href="#" rel="tag" class="category apps">Applications</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> morgamic</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur&hellip;</a>
-        in <a href="#" rel="tag" class="category web">Web</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Lando Calrissian</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Excepteur sint occaecat cupidatat non proident&hellip;</a>
-        in <a href="#" rel="tag" class="category mobile">Mobile</a></p>
-      </li>
-      <li class="hentry">
-        <cite class="author vcard"><a href="#" class="url fn"><img src="{{ MEDIA_URL }}img/fpo55.png" alt="" class="photo" width="38" height="38" /> Han</a></cite>
-        wrote <a href="#" class="entry-summary entry-title">Eiusmod tempor incididunt ut labore et dolore magna aliqua in voluptate velit esse cillum&hellip;</a>
-        in <a href="#" rel="tag" class="category addons">Add-ons</a></p>
-      </li>
-    </ul>
-  </div>
-
-</div>
-</section><!-- /#latest -->
-#}
-
-{# TODO elsewhere...
-<section id="content-elsewhere">
-<div class="wrap">
-
-  <header>
-    <h2>Elsewhere Around the Network</h2>
-    <p id="type-legend"><strong>Legend:</strong> <b class="type doc">Doc</b> <b class="type tool">Tool</b> <b class="type event">Event</b> <b class="type campaign">Campaign/Project</b></p>
-  </header>
-  <p class="intro">Snappy and short descriptive sentence goes here.</p>
-
-  <div id="sections">
-    <div class="mdn-section">
-      <h3><a href="#" class="web">Web</a></h3>
-      <ul>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Dolor sit amet, consectetuer adipiscing elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type tool">Tool</h5>
-          <h4><a href="#">Aliquam tincidunt mauris eu risus</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Cras ornare tristique elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Ut aliquam sollicitudin leo</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mdn-section">
-      <h3><a href="#" class="mobile">Mobile</a></h3>
-      <ul>
-        <li>
-          <h5 class="type event">Doc</h5>
-          <h4><a href="#">Donec quis dui at</a></h4>
-        </li>
-        <li>
-          <h5 class="type tool">Tool</h5>
-          <h4><a href="#">Aliquam tincidunt mauris eu risus</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Cras ornare tristique elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type campaign">Campaign/Project</h5>
-          <h4><a href="#">Ut aliquam sollicitudin leo</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mdn-section">
-      <h3><a href="#" class="addons">Add-ons</a></h3>
-      <ul>
-        <li>
-          <h5 class="type campaign">Campaign</h5>
-          <h4><a href="#">Cras iaculis ultricies nulla</a></h4>
-        </li>
-        <li>
-          <h5 class="type tool">Tool</h5>
-          <h4><a href="#">Vivamus molestie gravida turpis</a></h4>
-        </li>
-        <li>
-          <h5 class="type event">Event</h5>
-          <h4><a href="#">Cras ornare tristique elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Fusce pellentesque suscipit nibh</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mdn-section">
-      <h3><a href="#" class="apps">Applications</a></h3>
-      <ul>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Consectetuer adipiscing elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type tool">Tool</h5>
-          <h4><a href="#">Aliquam tincidunt mauris eu risus</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Nam convallis pellentesque nisl</a></h4>
-        </li>
-        <li>
-          <h5 class="type doc">Doc</h5>
-          <h4><a href="#">Ut aliquam sollicitudin leo</a></h4>
-        </li>
-      </ul>
-    </div>
-
-    <div class="mdn-section">
-      <h3><a href="#" class="labs">Labs</a></h3>
-      <ul>
-        <li>
-          <h5 class="type campaign">Campaign/Project</h5>
-          <h4><a href="#">Dolor sit amet, consectetuer adipiscing elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type tool">Tool</h5>
-          <h4><a href="#">Aliquam tincidunt mauris eu risus</a></h4>
-        </li>
-        <li>
-          <h5 class="type event">Event</h5>
-          <h4><a href="#">Cras ornare tristique elit</a></h4>
-        </li>
-        <li>
-          <h5 class="type event">Event</h5>
-          <h4><a href="#">Ut aliquam sollicitudin leo</a></h4>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-</section><!-- /#elsewhere -->
-#}
+</section>{# /#content #}
 
 {% endblock %}
