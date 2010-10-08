@@ -24,7 +24,18 @@
   <a href="/forums/ucp.php?mode=login" class="go">{{ _('Log in') }}</a></p>
 </div>
 </header>
-
+<script type="text/javascript">
+try {
+    if ('localStorage' in window && window['localStorage'] != null) {
+        if (localStorage['/home/devmo_shown_once'] == 'true') {
+            document.getElementById('home').removeChild(
+                document.getElementById('welcome-bar'));
+        } else {
+            localStorage['/home/devmo_shown_once'] = 'true';
+        }
+    }
+} catch (e) {}
+</script>
 <section id="content">
 <div class="wrap sidebar">
   <section id="content-main" role="main">
