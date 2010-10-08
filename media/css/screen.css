@@ -314,7 +314,7 @@ body.section-labs #nav-extra-labs a:active,
 /*** @Highlights *********/
 #home-highlights h2 { color: #770e0f; padding-left: 60px; background: url("../img/icons-headbar.png") 0 -200px no-repeat; font: 200 1.714em/1.6 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
 #home-highlights .intro { font: italic .857em Georgia, Times, "Times New Roman", serif; }
-#home-highlights .folder.visible { background: #fbfbfa url("../img/bg-emboss-robodino.png") 50% 25% no-repeat; }
+#home-highlights .folder.visible { background: #fbfbfa url("../img/bg-emboss-robodino.png") 50% -10% no-repeat; }
 
 #home-highlights .hentry { font-size: .857em; background-image: none; padding: 20px 20px 10px; border-top: 1px dotted #2f2f2f; }
 #home-highlights .hentry:first-child { border: 0; }
@@ -360,8 +360,8 @@ body.section-labs #nav-extra-labs a:active,
 .tabbed-on { border: 1px solid #aba9a5; padding-top: 3.1em; position: relative; }
 .tabbed-on ul.index { position: absolute; top: 0; left: 0; border-bottom: 1px solid #aba9a5; background: rgba(0,0,0,.04) url("../img/light-shade.png") 0 1.5em repeat-x; }
 ul.index { width: 100%; height: 3em; list-style: none; margin: 0; }
-#content-main ul.index li { border: 1px solid #aba9a5; border-bottom: 0; cursor: pointer; float: left; margin-right: -1px; text-align: center; color: #4e4f52; background: #eeec92 url("../img/light-shade.png") 0 1.25em repeat-x; padding: 15px 20px 10px; min-width: 80px; font: 200 1.2em/1 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
-#content-main ul.index li:hover { background: #fffd9f none; }
+#content-main ul.index li { border: 1px solid #aba9a5; border-bottom: 0; cursor: pointer; float: left; margin-right: -1px; text-align: center; color: #4e4f52; background: #eee url("../img/light-shade.png") 0 1.25em repeat-x; padding: 15px 20px 10px; min-width: 80px; font: 200 1.2em/1 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
+#content-main ul.index li:hover { background: #fff none; }
 #content-main ul.index li.active { background: #fbfbfa none; color: #333; border-bottom: 1px solid #fff; padding-bottom: 11px; }
 #content-main .tabbed-on ul.index li { border-width: 0 1px 0 0; margin-right: 0; }
 .tabbed-on .hidden, .folder { position: absolute; left: -999em; height: 0; overflow: hidden; }

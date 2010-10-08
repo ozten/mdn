@@ -4,7 +4,7 @@
 
 {% block bodyclass %}section-apps landing{% endblock %}
 
-{% block title %}{{ page_title(_('Applications')) }}{% endblock %}
+{% block title %}{{ page_title(_('Mozilla')) }}{% endblock %}
 
 {% block content %}
 <header id="section-head">
@@ -31,7 +31,7 @@
       <div id="popular-docs">
         <header class="head section-apps">
           {# L10n: Please escape HTML entities here, like &amp; #}
-          <h2>{{ _('Popular <span class="apps">Applications</span> Documentation')|safe }}</h2>
+          <h2>{{ _('Popular <span class="apps">Mozilla</span> Documentation')|safe }}</h2>
         </header>
         
         <ul class="hfeed">
@@ -91,7 +91,7 @@
       <div id="fave-tools">
         <header class="subhead">
           {# L10n: Please escape HTML entities here, like &amp; #}
-          <h3>{{ _('Favorite <span class="apps">Applications</span> Tools')|safe }}</h3>
+          <h3>{{ _('Favorite <span class="apps">Mozilla</span> Tools')|safe }}</h3>
         </header>
         <ul class="tools">
           <li>
@@ -109,7 +109,7 @@
       <div id="recent-news">
         <header class="subhead">
           {# L10n: Please escape HTML entities here, like &amp; #}
-          <h3>{{ _('Recent <span class="apps">Applications</span> News &amp; Updates')|safe }}</h3>
+          <h3>{{ _('Recent <span class="apps">Mozilla</span> News &amp; Updates')|safe }}</h3>
         </header>
 
         {{ newsfeed(updates) }}
@@ -121,7 +121,7 @@
   </section>{# /#content-main #}
   
   <aside id="content-sub" role="complementary">
-    {{ twitter(tweets, title=_('Correspondence on Twitter from the Applications developer community.')) }}
+    {{ twitter(tweets, title=_('Correspondence on Twitter from the Mozilla developer community.')) }}
   </aside>{# /#content-sub #}
 
 </div>

@@ -9,7 +9,7 @@ class SECTION_ADDONS:
 
 class SECTION_APPS:
     short = 'apps'
-    pretty = _(u'Applications')
+    pretty = _(u'Mozilla')
     twitter = 'twitter-apps'
     updates = 'updates-apps'
 

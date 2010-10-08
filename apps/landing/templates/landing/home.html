@@ -101,8 +101,6 @@
   </div><!-- /#slideshow -->
 
     <div id="home-highlights">
-      <h2>{{ _('Highlights From Around the Network') }}</h2>
-
       <div class="tabbed">
         <h3>{{ _('Docs') }}</h3>
         <h4 class="gloss-title">
@@ -112,7 +110,7 @@
         </h4>
         {% include "docs/glossary.html" %}
 
-        <div id="other-sections">
+        <!-- div id="other-sections">
           <div class="section">
             <h4><a href="{{ url('mobile') }}" class="mobile">{{ _('Mobile') }}</a></h4>
             <p>
@@ -131,7 +129,7 @@
             </p>
           </div>
           <div class="section">
-            <h4><a href="{{ url('apps') }}" class="apps">{{ _('Applications') }}</a></h4>
+            <h4><a href="{{ url('apps') }}" class="apps">{{ _('Mozilla') }}</a></h4>
             <p>
             {% trans devmo_participate=devmo_url('/En/Participating_in_the_Mozilla_project'),
                      devmo_l10n=devmo_url('/en/Localization'), devmo_qa=devmo_url('/en/QA') %}
@@ -141,7 +139,7 @@
             {% endtrans %}
             </p>
           </div>
-        </div>
+        </div -->
 
         <h3>{{ _('News & Updates') }}</h3>
         <p class="intro">{{ _('Highlighted Mozilla Developer News & Updates') }}</p>

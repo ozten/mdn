@@ -68,7 +68,7 @@
       <h3>
         {% trans mobile_link='<a href="{0}" class="mobile">{1}</a>'|f(url('mobile'), _('Mobile'))|safe,
                  addons_link='<a href="{0}" class="addons">{1}</a>'|f(url('addons'), _('Add-ons'))|safe,
-                 apps_link='<a href="{0}" class="apps">{1}</a>'|f(url('apps'), _('Applications'))|safe %}
+                 apps_link='<a href="{0}" class="apps">{1}</a>'|f(url('apps'), _('Mozilla'))|safe %}
         Get involved in the {{ mobile_link }}, {{ addons_link }}, & {{ apps_link }} Developer Communities:
         {% endtrans %}
       </h3>
@@ -94,7 +94,7 @@
           </ul>
         </div>
         <div class="section">
-          <h4><a href="{{ url('apps') }}" class="apps">{{ _('Applications') }}</a></h4>
+          <h4><a href="{{ url('apps') }}" class="apps">{{ _('Mozilla') }}</a></h4>
           <ul>
             <li><a href="{{ devmo_url('/en/Participating_in_the_Mozilla_project') }}">{{ _('Participating in the Mozilla project') }}</a></li>
             <li><a href="{{ devmo_url('/en/Using_Mozilla_code_in_other_projects') }}">{{ _('Using Mozilla code in other projects') }}</a></li>

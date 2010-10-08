@@ -47,6 +47,8 @@ with any web server. If you need a wsgi entry point, you can find one in
 
 [Haystack]: http://haystacksearch.org/
 
+    python manage.py compress_assets
+
 ### Cron jobs
 You want to update your product details periodically:
 

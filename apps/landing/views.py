@@ -32,7 +32,7 @@ def addons(request):
 
 
 def apps(request):
-    """Applications landing page."""
+    """Mozilla Applications landing page."""
     return common_landing(request, section=SECTION_APPS)
 
 
