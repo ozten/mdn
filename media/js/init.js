@@ -9,6 +9,12 @@ $(document).ready(function() {
     search.attr('action', search.attr('data-url'))
           .removeAttr('data-url')
           .children('input[name=sitesearch]').remove();
+
+    // Submit locale form on change
+    $('form.languages')
+        .find('select').change(function(){
+            this.form.submit();
+        });
 });
 
 /* Fake the placeholder attribute since Firefox doesn't support it. */
