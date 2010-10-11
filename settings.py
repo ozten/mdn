@@ -3,7 +3,7 @@
 import os
 import logging
 
-import product_details
+from django.utils.functional import lazy
 
 
 # Make file paths relative to settings.
@@ -68,15 +68,16 @@ LANGUAGE_CODE = 'en-US'
 
 # Accepted locales
 MDN_LANGUAGES = ('en-US', 'de',)
-
-# Override Django's built-in with our native names
-try:
-    LANGUAGES = dict([(i.lower(), product_details.languages[i]['native'])
-                      for i in MDN_LANGUAGES])
-except AttributeError: # product_details not available yet
-    LANGUAGES = {}
 RTL_LANGUAGES = None # ('ar', 'fa', 'fa-IR', 'he')
 LANGUAGE_URL_MAP = dict([(i.lower(), i) for i in MDN_LANGUAGES])
+
+# Override Django's built-in with our native names
+class LazyLangs(dict):
+    def __new__(self):
+        from product_details import product_details
+        return dict([(lang.lower(), product_details.languages[lang]['native'])
+                     for lang in MDN_LANGUAGES])
+LANGUAGES = lazy(LazyLangs, dict)()
 
 # Paths that don't require a locale prefix.
 SUPPORTED_NONLOCALES = ('media', 'admin')

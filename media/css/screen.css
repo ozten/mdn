@@ -235,6 +235,9 @@ body.section-labs #nav-extra-labs a:active,
 .user-state a:hover, .user-state a:focus, .user-state a:active { color: #fff; }
 #masthead .user-state { font-size: .785em; }
 
+/*** @Language Picker *********/
+footer .languages { float: right; text-align: right; margin: 0 0 1em; }
+
 /*** @Section @Nav *********/
 #nav-section { position: relative; z-index: 99; display: block; clear: both; background: #f8d575; margin-bottom: -1px; font-size: .857em; text-transform: uppercase }
 #nav-section ul { width: 940px; padding: 0 10px; margin: 0 auto; overflow: hidden; }
