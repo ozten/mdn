@@ -60,6 +60,12 @@ Also, to update RSS feeds:
 
     ./manage.py update_feeds
 
+### Other Packages
+The Production MDN website relies on the following Aliases
+
+* /forums is mapped to a phpBB instance
+* / also is serviced by a Dekiwiki instance
+
 License
 -------
 This software is licensed under the [Mozilla Tri-License][MPL]:
