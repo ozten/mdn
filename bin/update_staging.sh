@@ -10,12 +10,12 @@ PYTHON=`which python2.6`
 pushd "$HERE/../" > /dev/null
 
 # pull actual code
-$GIT pull origin master
+$GIT pull -q origin master
 $GIT submodule update --init
 
 # pull vendor repo
 pushd vendor > /dev/null
-$GIT pull origin master
+$GIT pull -q origin master
 $GIT submodule update --init
 popd > /dev/null
 
