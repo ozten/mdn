@@ -115,8 +115,10 @@ a.mobile:hover, a.mobile:focus, a.mobile:active { color: #a7df38; }
 .addons, a.addons:link, a.addons:visited { color: #00b6f0; }
 a.addons:hover, a.addons:focus, a.addons:active { color: #0cf; }
 
-.apps, a.apps:link, a.apps:visited { color: #ed2024; }
-a.apps:hover, a.apps:focus, a.apps:active { color: #f33; }
+.apps, a.apps:link, a.apps:visited, 
+.moz, a.moz:link, a.moz:visited { color: #ed2024; }
+a.apps:hover, a.apps:focus, a.apps:active, 
+a.moz:hover, a.moz:focus, a.moz:active { color: #f33; }
 
 .labs, a.labs:link, a.labs:visited { color: #aaa8a5; }
 a.labs:hover, a.labs:focus, a.labs:active { color: #bcbcbc; }
@@ -144,7 +146,8 @@ a.labs:hover, a.labs:focus, a.labs:active { color: #bcbcbc; }
 body.section-web #masthead { border-bottom-color: #fb9500; }
 body.section-mobile #masthead { border-bottom-color: #8dc434; }
 body.section-addons #masthead { border-bottom-color: #00b6f0; }
-body.section-apps #masthead { border-bottom-color: #ed2024; }
+body.section-apps #masthead, 
+body.section-moz #masthead { border-bottom-color: #ed2024; }
 body.section-docs #masthead, 
 body.section-tools #masthead, 
 body.section-community #masthead, 
@@ -175,12 +178,14 @@ body.section-labs #masthead { border-bottom-color: #f8d575; }
 body.section-web #nav-main-web a, #nav-main .current a.web { background-position: 50% -97px; border-bottom: 0; padding-bottom: 8px; }
 body.section-mobile #nav-main-mobile a, #nav-main .current a.mobile { background-position: 50% -187px; border-bottom: 0; padding-bottom: 8px; }
 body.section-addons #nav-main-addons a, #nav-main .current a.addons { background-position: 50% -277px; border-bottom: 0; padding-bottom: 8px; }
-body.section-apps #nav-main-apps a, #nav-main .current a.apps { background-position: 50% -367px; border-bottom: 0; padding-bottom: 8px; }
+body.section-apps #nav-main-apps a, #nav-main .current a.apps,
+body.section-moz #nav-main-moz a, #nav-main .current a.moz { background-position: 50% -367px; border-bottom: 0; padding-bottom: 8px; }
 
 #nav-main a.web:hover, #nav-main a.web:focus, #nav-main a.web:active { background-position: 50% -142px; padding-bottom: 7px; border-bottom: 1px solid #000; }
 #nav-main a.mobile:hover, #nav-main a.mobile:focus, #nav-main a.mobile:active { background-position: 50% -232px; padding-bottom: 7px; border-bottom: 1px solid #000; }
 #nav-main a.addons:hover, #nav-main a.addons:focus, #nav-main a.addons:active { background-position: 50% -322px; padding-bottom: 7px; border-bottom: 1px solid #000; }
 #nav-main a.apps:hover, #nav-main a.apps:focus, #nav-main a.apps:active { background-position: 50% -412px; padding-bottom: 7px; border-bottom: 1px solid #000; }
+#nav-main a.moz:hover, #nav-main a.moz:focus, #nav-main a.moz:active { background-position: 50% -412px; padding-bottom: 7px; border-bottom: 1px solid #000; }
 
 /*** @Secondary @Nav *********/
 #utility { width: 255px; float: right; }
@@ -220,10 +225,10 @@ body.section-labs #nav-extra-labs a:active,
 /*** @Search *********/
 #site-search { width: 235px; float: right; }
 #site-search p { margin: 0; }
-#site-search #q { width: 150px; padding: 4px 8px; margin-right: 8px; border: 1px solid #7d0d0f; background: #000; color: #f6e8e5; font-size: .785em; }
-#site-search #q:hover, #site-search #q:focus { border-color: #9c0d10; background: #320506; }
-#site-search button { padding: 2px 8px; display: inline-block; background: #630a0c; color: #ccc; font: 200 1em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; border: 0; -moz-border-radius: .25em; -webkit-border-radius: .25em; -border-radius: .25em; }
-#site-search button:hover, #site-search button:focus { background: #7d0d0f; color: #fff; cursor: pointer; }
+#site-search #q { width: 182px; padding: 3px 8px; margin-right: 8px; border: 1px solid #7d0d0f; background: #3b0809; color: #f6e8e5; font-size: .785em; }
+#site-search #q:hover, #site-search #q:focus { border-color: #9c0d10; background: #7d0d0f; color: #fff; }
+#site-search button { float: right; padding: 0; height: 22px; width: 25px; background: #630a0c url(../img/search-arrow.png) 50% 0 no-repeat; color: #ccc; text-indent: -999em; overflow: hidden; border: 0; -moz-border-radius: .25em; -webkit-border-radius: .25em; -border-radius: .25em; }
+#site-search button:hover, #site-search button:focus { background-color: #7d0d0f; background-position: 50% -40px; color: #fff; cursor: pointer; }
 #site-search-gg { font-size: .642em; float: right; margin-top: 3px; opacity: .75; }
 #site-search-gg * { margin: 0; padding: 0; }
 #site-search-gg img { height: 14px; }
@@ -255,6 +260,7 @@ footer .languages { float: right; text-align: right; margin: 0 0 1em; }
 #section-head #logo-mobile { width: 245px; background-position: 0 -200px; }
 #section-head #logo-addons { width: 285px; background-position: 0 -300px; }
 #section-head #logo-apps { width: 170px; background-position: 0 -400px; }
+#section-head #logo-moz { width: 250px; background-position: 0 -500px; }
 
 #section-head .util { float: left; margin: 10px 0 0 30px; font-size: .857em; }
 #section-head .util p { margin: 0 0 .25em; }
@@ -290,13 +296,13 @@ footer .languages { float: right; text-align: right; margin: 0 0 1em; }
 }
 #slideshow ol { list-style: none; margin: 0; padding: 0; }
 #slideshow .slide { margin: 0 0 1.5em; padding: 0 0 1em; border-bottom: 1px solid #dbd8cd; }
-#slideshow.js .slide { margin: 0; padding: 0; border: 0; height: 330px; overflow: hidden; }
+#slideshow.js .slide { margin: 0; padding: 0; border: 0; height: 270px; overflow: hidden; }
 
 #slideshow .slide-desc { font-size: .785em; }
 #slideshow .slide-desc h3 { font: bold italic 1.18em Georgia, Times, "Times New Roman", serif; margin: 1em 0 .15em; }
 #slideshow.js .slide-desc h3 { color: #cdd9d9; margin-top: 0; }
 #slideshow .slide-desc h2 { font: bold 2.363em/1.2 Georgia, Times, "Times New Roman", serif; }
-#slideshow.js .slide-desc { position: absolute; top: 0; right: 0; width: 290px; height: 365px; padding: 25px 25px 40px; background-color: #444; background-color: rgba(0,0,0,.6); background-image: url("../img/bg-halftone.png"); color: #fff; text-shadow: 1px 1px 1px #000; }
+#slideshow.js .slide-desc { position: absolute; top: 0; right: 0; width: 290px; height: 205px; padding: 25px 25px 40px; background-color: #444; background-color: rgba(0,0,0,.6); background-image: url("../img/bg-halftone.png"); color: #fff; text-shadow: 1px 1px 1px #000; }
 #slideshow.js .slide-desc a { color: #9cf; }
 
 #slideshow .slide-desc .more { clear: both; }
@@ -309,7 +315,7 @@ footer .languages { float: right; text-align: right; margin: 0 0 1em; }
 
 #slide-control li { float: left; margin: 0 10px 1em 0; }
 #slideshow.js #slide-control li { margin: 0 0 0 10px; }
-#slideshow.js #slide-control { position: absolute; right: 25px; bottom: 25px; z-index: 99; }
+#slideshow.js #slide-control { position: absolute; right: 20px; bottom: 20px; z-index: 99; }
 #slideshow.js #slide-control a { display: block; width: 10px; height: 10px; text-indent: -999em; overflow: hidden; background: #8f8a7e; -moz-box-shadow: inset 1px 1px 0 rgba(0,0,0,.5); -webkit-box-shadow: inset -1px -1px 0 rgba(0,0,0,.5); box-shadow: inset -1px -1px 0 rgba(0,0,0,.5); }
 #slideshow.js #slide-control a:hover, #slideshow.js #slide-control a:focus, #slideshow.js #slide-control a:active { background: #fff; }
 #slideshow.js #slide-control li.on a { background: #fff; }
@@ -317,7 +323,7 @@ footer .languages { float: right; text-align: right; margin: 0 0 1em; }
 /*** @Highlights *********/
 #home-highlights h2 { color: #770e0f; padding-left: 60px; background: url("../img/icons-headbar.png") 0 -200px no-repeat; font: 200 1.714em/1.6 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
 #home-highlights .intro { font: italic .857em Georgia, Times, "Times New Roman", serif; }
-#home-highlights .folder.visible { background: #fbfbfa url("../img/bg-emboss-robodino.png") 50% -10% no-repeat; }
+#home-highlights .folder.visible { background: #fbfbfa url("../img/bg-emboss-robodino.png") 50% 20px no-repeat; }
 
 #home-highlights .hentry { font-size: .857em; background-image: none; padding: 20px 20px 10px; border-top: 1px dotted #2f2f2f; }
 #home-highlights .hentry:first-child { border: 0; }
@@ -505,7 +511,7 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
 .boxed .head.section-web { background-position: 0 0; }
 .boxed .head.section-mobile { background-position: 0 -200px; }
 .boxed .head.section-addons { background-position: 0 -400px; }
-.boxed .head.section-apps { background-position: 0 -600px; }
+.boxed .head.section-apps, .boxed .head.section-moz { background-position: 0 -600px; }
 
 .boxed .head h2, .boxed .head h3 { margin-bottom: 0; color: #000; font: 200 1.857em/1.2 "League Gothic", Haettenschweiler, sans-serif; text-transform: uppercase; letter-spacing: .5px; }
 .boxed .head p { margin: 0; font: bold italic .857em/1.1 Georgia, Times, "Times New Roman", serif; }
@@ -554,7 +560,7 @@ section.boxed:after, div.boxed:after { content: "."; display: block; clear: both
 .section h4 a.web { background-position: 0 -100px; }
 .section h4 a.mobile { background-position: 0 -300px; }
 .section h4 a.addons { background-position: 0 -500px; }
-.section h4 a.apps { background-position: 0 -700px; }
+.section h4 a.apps, .section h4 a.moz { background-position: 0 -700px; }
 
 #other-sections .section ul { border-bottom: 1px dotted #d8d4ca; }
 #other-sections .section ul li { margin-bottom: 1em; background: transparent url("../img/bullet-tiny.png") 0 .5em no-repeat; padding: 0 0 0 12px; }
