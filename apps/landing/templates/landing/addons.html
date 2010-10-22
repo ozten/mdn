@@ -59,7 +59,26 @@
         </ul>
         <p class="all"><a href="https://addons.mozilla.org/en-US/developers/" class="go">{{ _('All add-ons development documentation') }}</a></p>
       </div>
-
+      <div id="videos">
+        <header class="subhead">
+          <h2>{{ _('Watch <span class="mobile">Add-on</span> Videos')|safe }}</h2>
+        </header>
+        {% include "includes/video_player.html" %}
+        <ul class="hfeed">
+          <li class="hentry video">
+            <a href="/en-US/firefox/video/?video=about-mobile" 
+               id="myk_jetpack_summit_2010" class="video_thumbnail">
+              <img src="http://videos-cdn.mozilla.net/serv/mdn/myk_jetpack_summit_2010/myk_jetpack_summit_2010.png" 
+                   alt="{{ _('View Video') }}" height="148" width="255" /></a>
+            <h4 class="entry-title">{{ 
+              _("Build Add-on in 5 Minutes") }}</h4>
+            <p class="entry-summary">{% trans %}
+            Watch Myk Melez create an Add-on in 5 minutes using the new Add-on Builder!
+            {% endtrans %}
+            </p>
+          </li>
+        </ul>      
+      </div>
       <div id="fave-tools">
         <header class="subhead">
           {# L10n: Please escape HTML entities here, like &amp; #}

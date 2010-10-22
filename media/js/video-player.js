@@ -408,7 +408,7 @@ Mozilla.VideoPlayer.prepare_video = function (i, thumb) {
         video_path, video_files, _unused;
     
     video_path = id + '/' + id;
-    video_files = [{url: cdn + video_path + '.webmx', type: 'video/webm'},
+    video_files = [{url: cdn + video_path + '.webm', type: 'video/webm'},
                    {url: cdn + video_path + '.ogv',  type: 'video/ogg'},
                    {url: cdn + video_path + '.mp4',  type: 'video/mp4'}];
     _unused = new Mozilla.VideoPlayer(id, video_files, 
