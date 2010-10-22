@@ -434,6 +434,30 @@ ul.index a:hover, ul.index a:focus, ul.index a:active { color: #2f2f2f; text-dec
 #content-sub .heat-graph a { display: block; padding: 4px 8px; width: 184px; color: #333; background: transparent url("../img/light-shade.png") 0 .95em repeat-x; }
 #content-sub .heat-graph a b { float: right; font-family: Georgia, Times, "Times New Roman", serif; }
 
+/** @Firefox4-Web-Developers *********/
+.sidebar aside div#mdn-firefox4-webdev { 
+    background: url("../img/sidebar/bg-fx4-dev.png") 82px 0px no-repeat #0A1324;
+    border: solid 4px #D64203;
+    color: #FFF;
+} 
+/*  */
+#mdn-firefox4-webdev h3 { 
+    color: #D64203; font-weight: 200;
+    letter-spacing: .5px;
+    line-height: 0.8em;
+    font-size: 2.2em;
+    margin-bottom: 0px;
+}
+/*color: #FFF;*/
+#mdn-firefox4-webdev h4 {
+   font-size: 1.5em; font-weight: 200;
+}
+#mdn-firefox4-webdev h3, #mdn-firefox4-webdev h4 {
+    font-family: "League Gothic", Haettenschweiler, sans-serif;
+    text-transform: uppercase;
+}
+#mdn-firefox4-webdev p { margin-bottom: 0px; }
+
 /*** @Twitter *********/
 #content-sub #mdn-twitter { background: #f4f8fc; border: 0; }
 #content-sub #mdn-twitter .mod-title { background: #2f2f2f url("../img/bg-headings.png") 60px -115px no-repeat; }

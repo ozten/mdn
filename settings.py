@@ -165,6 +165,7 @@ MINIFY_BUNDLES = {
         'common': (
             'css/screen.css',
             'css/video-player.css',
+            'css/forums-sidebar-module.css',
         ),
     },
     'js': {

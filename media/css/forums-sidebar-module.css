@@ -1,0 +1,48 @@
+#content-sub #mdn-forums-sidebar {
+    background-color: #E69F1D;
+    background: -moz-linear-gradient(top, #D18400 0%, #F5AA20 8%, #F5AA20 100%); 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#D18400), color-stop(8%,#F5AA20), color-stop(100%,#F5AA20)); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D18400', endColorstr='#F5AA20',GradientType=0 );
+    border-top: solid 4px #F9D982;
+    border-right: solid 4px #F8D677;
+    border-bottom: solid 4px #F9D982;
+    border-left: solid 4px #F8D677;
+
+    color: #81460B;
+    text-align: center;
+}
+#mdn-forums-sidebar h3 {
+    color: #FFF;
+    font-size: 3.2em;
+    font-weight: 100;
+    line-height: 0.9em;
+    margin-bottom: 0px;
+    text-shadow: #840 0px 3px 0;
+}
+#mdn-forums-sidebar h3, #mdn-forums-sidebar a {
+    font-family: "League Gothic", Haettenschweiler, sans-serif;
+    text-transform: uppercase;
+}
+#mdn-forums-sidebar p {
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 0.3em; 
+}
+
+#mdn-forums-sidebar a { 
+    background-color: #F9B657;
+    border-bottom: solid 3px #730;
+    color: #840;
+    display: block;
+    font-family: "Lucida Grande","Lucida Sans Unicode",Lucida,Arial,Helvetica,sans-serif;
+    font-size: 1.1em; 
+    font-weight: 900;
+    background: -moz-linear-gradient(top, #FCECD4 0%, #F9B657 63%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FCECD4), color-stop(63%,#F9B657)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FCECD4', endColorstr='#F9B657',GradientType=0 ); /* ie */
+    line-height: 1.1;
+    margin-left: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 150px;
+}
