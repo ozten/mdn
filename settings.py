@@ -164,6 +164,7 @@ MINIFY_BUNDLES = {
     'css': {
         'common': (
             'css/screen.css',
+            'css/video-player.css',
         ),
     },
     'js': {
@@ -180,6 +181,9 @@ MINIFY_BUNDLES = {
             'js/slideshow.js',
             'js/TabInterface.js',
             'js/home.js',
+
+            # Used only on pages with video popups
+            'js/video-player.js',
         ),
     },
 }

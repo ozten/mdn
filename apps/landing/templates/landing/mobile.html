@@ -17,7 +17,7 @@
     <ul>
       <li class="util-twitter"><a href="http://twitter.com/mozmobile">{{ _('Twitter') }}</a></li>
       <li class="util-rss"><a href="http://planet.firefox.com/mobile/">{{ _('Subscribe') }}</a></li>
-      <li class="util-discuss"><a href="http://mobile.support.mozilla.com/tiki-view_forum.php?locale=en-US&forumId=5">{{ _('Join the Mobile discussions!') }}</a></li>
+      <li class="util-discuss"><a href="http://mobile.support.mozilla.com/tiki-view_forum.php?locale=en-US&amp;forumId=5">{{ _('Join the Mobile discussions!') }}</a></li>
     </ul>
   </div>
 </div>
@@ -84,10 +84,41 @@
         <p class="all"><a href="{{ devmo_url('/En/Mobile') }}" class="go">{{ _('All mobile development documentation') }}</a></p>
 
         <header class="subhead">
+          <h2>{{ _('Watch <span class="mobile">Mobile</span> Videos')|safe }}</h2>
+        </header>
+        {% include "includes/video_player.html" %}
+        <ul class="hfeed">
+          <li class="hentry video">
+            <a href="/en-US/firefox/video/?video=about-mobile" 
+               id="ragavan_summit_2010" class="video_thumbnail">
+              <img src="http://videos-cdn.mozilla.net/serv/mdn/ragavan_summit_2010/ragavan_summit_2010.png" 
+                   alt="{{ _('View Video') }}" height="148" width="255" /></a>
+            <h4 class="entry-title">{{ 
+              _("Pre-Alpha Fennec and HTML5 Demos") }}</h4>
+            <p class="entry-summary">{% trans %}
+            See Stuart demo HTML5 capabilities on pre-alpha Fennec. Learn about 
+            the purpose and goals behind the development of Firefox 4 for mobile.
+            {% endtrans %}
+            </p>
+          </li>
+          <li class="hentry video">
+            <a href="/en-US/firefox/video/?video=about-mobile"
+               id="stuart_summit_2010" class="video_thumbnail">
+              <img src="http://videos-cdn.mozilla.net/serv/mdn/stuart_summit_2010/stuart_summit_2010.png" 
+                   alt="{{ _('View Video') }}" height="148" width="255" /></a>
+            <h4 class="entry-title">{{ 
+              _('Firefox Sync - Why Sync up, Security and More')}}</h4>
+            <p class="entry-summary">{% trans %}
+              See Ragavan demo Firefox Sync on his Android phone. Learn about 
+              purpose and goals behind the development of Firefox Sync.
+              {% endtrans %}
+          </li>
+        </ul>
+
+        <header class="subhead">
           {# L10n: Please escape HTML entities here, like &amp; #}
           <h2>{{ _('Favorite <span class="mobile">Mobile</span> Articles')|safe }}</h2>
         </header>
-
         <ul class="hfeed">
           <li class="hentry">
             <h4 class="entry-title"><a href="http://starkravingfinkle.org/blog/2010/06/fennec-2-0-whats-coming" rel="bookmark">{{ _("Firefox for mobile: What's coming next") }}</a></h4>

@@ -1,7 +1,9 @@
 /**
- * Various tools for the HTML5 video element
+ * Various tools for the HTML5 video element.
  *
- * Meant to be used with CSS in /styles/tignish/video.css.
+ * Meant to be used with CSS in /media/css/video-player.css.
+ *
+ * Video lightbox is documented below in Mozilla.VideoPlayer.prepare_video
  *
  * This file contains Flash-detection routines adapted from SWFObject and
  * originally licensed under the MIT license.
@@ -27,7 +29,8 @@ Mozilla.VideoControl = function () {};
 Mozilla.VideoControl.controls = [];
 
 /**
- * Initializes video controls and video scalers on this page after the document has been loaded
+ * Initializes video controls and video scalers on this page after the 
+ * document has been loaded
  */
 $(document).ready(function ()
 {
@@ -218,7 +221,8 @@ Mozilla.VideoPlayer.prototype.getVideoPlayerContent = function ()
 
 Mozilla.VideoPlayer.prototype.getFlashPlayerContent = function ()
 {
-    var url = '/media/img/tignish/video/playerWithControls.swf?flv=' + this.flv_url,
+    var url = '/media/img/tignish/video/playerWithControls.swf?flv=' + 
+              this.flv_url,
         content;
     if (this.autoplay) {
         url += '&autoplay=true';
@@ -264,7 +268,8 @@ Mozilla.VideoPlayer.prototype.open = function ()
 
     this.drawVideoPlayer();
 
-    this.video_container.style.top = ($(window).scrollTop() + ($(window).height() - 570) / 2) + 'px';
+    this.video_container.style.top = ($(window).scrollTop() + 
+        ($(window).height() - 570) / 2) + 'px';
     this.opened = true;
 };
 
@@ -304,14 +309,17 @@ Mozilla.VideoPlayer.getFlashVersion = function ()
             version = new Mozilla.FlashVersion(version.split('.'));
         }
     } else {
-        if (navigator.userAgent && navigator.userAgent.indexOf('Windows CE') >= 0) {
+        if (navigator.userAgent && 
+            navigator.userAgent.indexOf('Windows CE') >= 0) {
+
             axo = true;
             flash_version = 3;
             while (axo) {                
                 // look for greatest installed version starting at 4
                 try {
                     major_version++;
-                    axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash.' + major_version);
+                    axo = new ActiveXObject('ShockwaveFlash.ShockwaveFlash.' + 
+                          major_version);
                     version = new Mozilla.FlashVersion([major_version, 0, 0]);
                 } catch (e1) {
                     axo = null;
@@ -335,7 +343,8 @@ Mozilla.VideoPlayer.getFlashVersion = function ()
                 } catch (e4) {}
             }
             if (axo !== null) {
-                version = new Mozilla.FlashVersion(axo.GetVariable('$version').split(' ')[1].split(','));
+                version = new Mozilla.FlashVersion(
+                    axo.GetVariable('$version').split(' ')[1].split(','));
             }
         }
     }
@@ -394,18 +403,22 @@ Mozilla.VideoPlayer.flash_verison = Mozilla.VideoPlayer.getFlashVersion();
  * @param Element thumb The HTML Anchor tag
  */
 Mozilla.VideoPlayer.prepare_video = function (i, thumb) {
-    var cdn = 'http://videos-cdn.mozilla.net/serv/mdn/', id, video_path, video_files, _unused;
-    id = $(thumb).attr('id');
+    var cdn = 'http://videos-cdn.mozilla.net/serv/mdn/',
+        id = $(thumb).attr('id'), 
+        video_path, video_files, _unused;
+    
     video_path = id + '/' + id;
     video_files = [{url: cdn + video_path + '.webmx', type: 'video/webm'},
                    {url: cdn + video_path + '.ogv',  type: 'video/ogg'},
                    {url: cdn + video_path + '.mp4',  type: 'video/mp4'}];
-    _unused = new Mozilla.VideoPlayer(id, video_files, cdn + video_path + '.flv');
+    _unused = new Mozilla.VideoPlayer(id, video_files, 
+                                      cdn + video_path + '.flv');
 };
 
 $(document).ready(function () {
     var surveyId = 'survey201009',
-        video_thumbnails, lightBox, _overlay, positionFixed, height, scrollTop, _link,
+        video_thumbnails, lightBox, _overlay, positionFixed, 
+        height, scrollTop, _link,
     /**
      * From http://yura.thinkweb2.com/cft/
      */
