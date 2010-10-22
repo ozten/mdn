@@ -11,7 +11,7 @@
   <meta name="Rating" content="General">
 
   <link rel="home" href="{{ url('home') }}">
-  <link rel="copyright" href="#legal-copyright">
+  <link rel="copyright" href="#copyright">
   <link rel="shortcut icon" href="{{ MEDIA_URL }}img/favicon.ico"/>
 
   {% block site_css %}
@@ -48,7 +48,7 @@
         <form id="site-search" method="get" action="http://www.google.com/search"
               data-url="{{ url('search') }}">
           <p>
-            <input type="text" role="search" placeholder="{{ _('Search') }}" id="q" name="q" value="{{ query }}" />
+            <input type="text" role="search" placeholder="{{ _('Search MDN') }}" id="q" name="q" value="{{ query }}" />
             <button type="submit">{{ _('Search') }}</button>
           </p>
           <input type="hidden" name="sitesearch" value="developer.mozilla.org" />
