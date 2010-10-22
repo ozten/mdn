@@ -140,7 +140,7 @@ a.labs:hover, a.labs:focus, a.labs:active { color: #bcbcbc; }
 
 /* @Header *********/
 #masthead { background: #000; border-bottom: 4px solid #240304; color: #b0b7bc; }
-#masthead .wrap { padding-top: 10px; background: url("../img/bg-masthead.png") right bottom no-repeat; }
+#masthead .wrap { padding-top: 10px; background: #000 url("../img/bg-masthead.png") right bottom no-repeat; }
 #masthead.major .wrap { padding-top: 20px; }
 
 body.section-web #masthead { border-bottom-color: #fb9500; }
