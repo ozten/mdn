@@ -2,6 +2,20 @@
 .hentry.video { 
     float: left;
     width: 310px; 
+    position: relative;
+}
+
+.hentry.video h3 { 
+    color: #FFF;
+    font-size: 1.5em;
+    font-weight: 900;
+
+    position: absolute;
+    top: 120px;
+    left: 10px;
+
+    text-shadow: #333 3px 3px 2px;
+
 }
 
 .hentry.video p { 
