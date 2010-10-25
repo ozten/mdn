@@ -31,7 +31,7 @@ def addons(request):
     return common_landing(request, section=SECTION_ADDONS, extra=extra)
 
 
-def apps(request):
+def mozilla(request):
     """Mozilla Applications landing page."""
     return common_landing(request, section=SECTION_APPS)
 

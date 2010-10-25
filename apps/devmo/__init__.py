@@ -8,10 +8,10 @@ class SECTION_ADDONS:
     updates = 'updates-addons'
 
 class SECTION_APPS:
-    short = 'apps'
+    short = 'mozilla'
     pretty = _(u'Mozilla')
-    twitter = 'twitter-apps'
-    updates = 'updates-apps'
+    twitter = 'twitter-mozilla'
+    updates = 'updates-mozilla'
 
 class SECTION_MOBILE:
     short = 'mobile'
