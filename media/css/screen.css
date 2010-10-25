@@ -225,7 +225,7 @@ body.section-labs #nav-extra-labs a:active,
 /*** @Search *********/
 #site-search { width: 235px; float: right; }
 #site-search p { margin: 0; }
-#site-search #q { width: 182px; padding: 3px 8px; margin-right: 8px; border: 1px solid #7d0d0f; background: #3b0809; color: #f6e8e5; font-size: .785em; }
+#site-search #q { width: 182px; padding: 3px 8px; border: 1px solid #7d0d0f; background: #3b0809; color: #f6e8e5; font-size: .785em; }
 #site-search #q:hover, #site-search #q:focus { border-color: #9c0d10; background: #7d0d0f; color: #fff; }
 #site-search button { float: right; padding: 0; height: 22px; width: 25px; background: #630a0c url(../img/search-arrow.png) 50% 0 no-repeat; color: #ccc; text-indent: -999em; overflow: hidden; border: 0; -moz-border-radius: .25em; -webkit-border-radius: .25em; -border-radius: .25em; }
 #site-search button:hover, #site-search button:focus { background-color: #7d0d0f; background-position: 50% -40px; color: #fff; cursor: pointer; }
