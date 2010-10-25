@@ -163,7 +163,7 @@ try {
   </section>
 
   <aside id="content-sub" role="complementary">
-    <a href="/En/Firefox_4_for_developers">
+    <a href="{{ devmo_url('/En/Firefox_4_for_developers') }}">
       <div class="module" id="mdn-firefox4-webdev">
         <h3>Firefox 4</h3>
         <h4>for Developers</h4>
@@ -174,19 +174,19 @@ try {
       <h3 class="mod-title">{{ _('Popular Docs') }}</h3>
       <ul class="hfeed">
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/HTML">{{ _('HTML') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/HTML') }}">{{ _('HTML') }}</a></h4>
           <p class="entry-content">{{ _('Hypertext Markup Language, the core technology of the web.') }}</p>
         </li>
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/CSS">{{ _('CSS Reference') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/CSS') }}">{{ _('CSS Reference') }}</a></h4>
           <p class="entry-content">{{ _('Cascading Style Sheets.') }}</p>
         </li>
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/JavaScript">{{ _('JavaScript') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/JavaScript') }}">{{ _('JavaScript') }}</a></h4>
           <p class="entry-content">{{ _('The scripting language that powers modern web applications.') }}</p>
         </li>
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/DOM">{{ _('DOM') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/DOM') }}">{{ _('DOM') }}</a></h4>
           <p class="entry-content">{% trans %}
             The Document Object Model describes the layout and content of web pages.
           {% endtrans %}</p>
@@ -198,27 +198,25 @@ try {
           {% endtrans %}</p>
         </li>
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/mobile">{{ _('Developing for Mobile') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/mobile') }}">{{ _('Developing for Mobile') }}</a></h4>
           <p class="entry-content">{% trans %}
             Developing add-ons and content for Firefox mobile.
           {% endtrans %}</p>
         </li>
         <li class="hentry">
-          <h4 class="entry-title"><a href="/En/Participating_in_the_Mozilla_project">{{ _('Participating in the Mozilla Project') }}</a></h4>
+          <h4 class="entry-title"><a href="{{ devmo_url('/En/Participating_in_the_Mozilla_project') }}">{{ _('Participating in the Mozilla Project') }}</a></h4>
           <p class="entry-content">{% trans %}
             Everything from filing bugs to fixing them.
           {% endtrans %}</p>
         </li>
       </ul>
     </div>
-    <!- a href="https://developer.mozilla.org/forums/viewforum.php?f=3"-->
-      <div class="module" id="mdn-forums-sidebar">
-        <h3>{{ _('Be Heard.') }}</h3>
-        <p>Join the MDN forum and share your thoughts on the open web:</p>
-        <a href='/forums'>{{
-          _('Get Started Today!') }}</a>
-      </div>
-    <!-- /a-->
+    <div class="module" id="mdn-forums-sidebar">
+      <h3>{{ _('Be Heard.') }}</h3>
+      <p>Join the MDN forum and share your thoughts on the open web:</p>
+      <a href='/forums'>{{
+        _('Get Started Today!') }}</a>
+    </div>
   </aside>
 </div>
 </section>{# /#content #}
