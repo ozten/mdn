@@ -40,7 +40,7 @@ def find_supported(test):
 class Prefixer(object):
 
     def __init__(self, request):
-x        self.request = request
+        self.request = request
         split = self.split_path(request.path_info)
         self.locale, self.shortened_path = split
 
